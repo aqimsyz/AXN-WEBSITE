@@ -75,9 +75,19 @@ h1 {
   .col-lg-3.col-md-4 {
     flex: 0 0 180px !important;
     max-width: 180px !important;
-  }
+ }
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active,
+.dropdown-toggle:focus,
+.dropdown-toggle:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
+.navbar-nav .nav-link,
+.dropdown-toggle {
+  -webkit-tap-highlight-color: transparent;
+}
 .navbar-brand,
 .navbar-nav .nav-link,
 .form-check-label {
@@ -796,6 +806,7 @@ footer {
 .orbit-6 .planet-wrapper { transform: rotate(250deg) translateX(var(--orbit-radius)); }
 .orbit-7 .planet-wrapper { transform: rotate(295deg) translateX(var(--orbit-radius)); }
 .orbit-8 .planet-wrapper { transform: rotate(340deg) translateX(var(--orbit-radius)); }
+
 
 
 
