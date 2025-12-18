@@ -9,6 +9,10 @@ body, html {
   background-size: 100% auto;
 }
 
+body{
+   padding-top: 70px;
+}
+
 #starfield {
   position: fixed;
   top: 0; left: 0;
@@ -532,4 +536,5 @@ footer {
     backdrop-filter: blur(8px);
     height: 20px;
 }
+
 
