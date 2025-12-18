@@ -802,7 +802,7 @@ footer {
 @media (max-width: 768px) {
 
   .distance-graph {
-    height: 160px !important;     
+    height: 120px !important;     
     padding: 0 10px;
   }
 
@@ -828,6 +828,14 @@ footer {
     margin-bottom: 2rem !important;
   }
 }
+
+.graph-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(0.7rem, 1vw, 1rem); 
+  color: #00ffff;
+}
+
 
 
 
