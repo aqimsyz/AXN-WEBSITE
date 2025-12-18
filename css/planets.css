@@ -809,14 +809,15 @@ footer {
 }
 
 .distance-graph .bar span {
-    font-size: clamp(10px, 2vw, 14px); 
+    font-size: 10px; 
     word-wrap: break-word;           
 }
 @media (max-width: 768px) {
     .distance-graph .bar span {
-        font-size: clamp(8px, 2vw, 12px);
+        font-size: 8px;
     }
 }
+
 
 
 
