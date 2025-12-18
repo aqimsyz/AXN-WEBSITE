@@ -6,7 +6,15 @@ body, html {
   overflow-y: auto;
   font-family: 'Segoe UI', sans-serif;
   background-image: url(../images/img4.jpg);
-  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 992px) {
+  html, body {
+    background-size: 100% auto;
+  }
 }
 
 body{
@@ -536,5 +544,6 @@ footer {
     backdrop-filter: blur(8px);
     height: 20px;
 }
+
 
 
