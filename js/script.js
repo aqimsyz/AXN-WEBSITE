@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("cosmicUsername", username);
                 localStorage.setItem("cosmicLoginTime", Date.now().toString());
 
-                window.location.href = "loading.html";
+                window.location.href = "landing.html";
             } else {
                 errorMsg.textContent = "Wrong username or password!";
                 errorMsg.style.color = "#ff6b6b";
@@ -263,4 +263,5 @@ document.querySelectorAll('.orbit').forEach(orbit => {
 
     wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
 });
+
 
