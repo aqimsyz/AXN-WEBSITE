@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.textContent = events[(eventIndex + idx) % events.length];
       });
       eventIndex = (eventIndex + 1) % events.length;
-    }, 3000);
+    }, 9000);
   }
 
   // ===== PLANET SIZE BUBBLE CHART =====
@@ -150,17 +150,16 @@ if (planetChartCanvas) {
       interaction: { mode: 'nearest', intersect: false },
       hitRadius: 60,
 
-      // THIS IS ALL YOU NEED — LEGEND IS BACK + BEAUTIFUL
       plugins: {
         legend: {
           display: true,
-          position: 'bottom',        // or 'top'
+          position: 'bottom',     
           align: 'center',
           labels: {
             color: '#e0e8ff',
             font: { size: 14, weight: '600' },
             padding: 20,
-            usePointStyle: true,     // round dots instead of squares
+            usePointStyle: true,   
             pointStyle: 'circle',
             boxWidth: 12,
             boxHeight: 12,
@@ -234,4 +233,5 @@ if (planetChartCanvas) {
   }
 
 });
+
 
