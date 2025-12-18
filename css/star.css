@@ -71,6 +71,13 @@ html, body {
   box-shadow: 0 0 10px #00d2ff;
 }
 
+.navbar-brand img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
   .dropdown-menu {
     transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 0;
@@ -615,6 +622,7 @@ body.dark-mode #fact-counter {
     }
 
 }
+
 
 
 
