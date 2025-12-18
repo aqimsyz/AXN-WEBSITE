@@ -6,11 +6,10 @@ body.planet {
   background: #000 url('../images/bg.jpg') center/cover no-repeat fixed;
   color: #fff;
   overflow-x: hidden;
+  padding-top: 80px;
 }
 
-body{
-   padding-top: 80px;
-}
+
 h1 {
     font-size: 2vh;
     text-transform: uppercase;
@@ -126,7 +125,6 @@ h1 {
     transform: translateY(0);
     visibility: visible;
   }
-}
 .dropdown-menu {
   background: rgba(10, 10, 30, 0.85) !important;
   backdrop-filter: blur(10px);                 
@@ -820,6 +818,7 @@ footer {
     margin-bottom: 4rem;
   }
 }
+
 
 
 
