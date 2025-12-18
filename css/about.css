@@ -43,19 +43,6 @@ body {
   white-space: normal;
 }
 
-@media (max-width: 768px) {
-    .navbar-title {
-        font-size: 1rem;  
-        letter-spacing: 0.5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-title {
-        font-size: 0.9rem; 
-    }
-}
-
 .nav-link.active {
   color: #00d2ff !important;
   text-shadow: 
@@ -590,5 +577,6 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
