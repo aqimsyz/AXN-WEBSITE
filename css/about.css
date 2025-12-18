@@ -128,7 +128,8 @@ body {
 }
 #main-navbar {
   overflow: visible !important;       
-  z-index: 1050;                    
+  z-index: 1050;  
+  background: rgba(0, 0, 6, 0.6);
 }
 
 #starfield {
@@ -199,7 +200,6 @@ body {
   pointer-events: none;
 }
 
-/* Trail particle */
 .trail-particle {
   position: absolute;
   width: 6px;
@@ -212,7 +212,6 @@ body {
   animation-fill-mode: forwards;
 }
 
-/* Moon color */
 .trail-particle.moon-mode {
   background: #00eaff;
   filter: drop-shadow(0 0 10px #00eaff);
@@ -243,7 +242,6 @@ body {
   100% { transform: translate(25px, -50%); opacity: 0; }
 }
 
-/* Light mode sun glow */
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-icon {
   filter: drop-shadow(0 0 6px #ffdd55) drop-shadow(0 0 12px #ffcc33);
 }
@@ -268,7 +266,7 @@ body.light-mode::before {
 }
 
 body.dark-mode::before {
-  background-color: rgba(0,0,0,0.7); /* dark overlay */
+  background-color: rgba(0,0,0,0.7); 
 }
 body.dark-mode .login-card,
 body.dark-mode .register-card,
@@ -560,6 +558,7 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
 
