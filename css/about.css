@@ -8,14 +8,19 @@ body {
     font-family: 'Exo 2', sans-serif;
     background: linear-gradient(to bottom, #000000 0%, #0b0d17 100%);
     color: #ffffff;
-    min-height: 100vh;     
-    overflow: hidden;    
+    min-height: 100vh;       
     display: flex;       
     flex-direction: column;
+    background-image: url(../images/img2.jpg);
     background-size: 100% auto;
     padding-top: 80px;
-    background-image: url(../images/img2.jpg);
 
+}
+
+@media (min-width: 1024px) {
+    html {
+        background-size: 100% auto;
+    }
 }
 
 #starfield {
@@ -25,7 +30,7 @@ body {
   height: 100%;
   z-index: 1;                         
   pointer-events: none;
-
+}
 @font-face {
     font-family:"Syncopate-Bold";
     src: url(../font/Syncopate-Bold.ttf);
@@ -571,6 +576,7 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
 
