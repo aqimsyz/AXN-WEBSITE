@@ -1,9 +1,8 @@
-/* Fullscreen video background */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* prevents scrolling */
+  overflow: hidden;
 }
 
 .bg-video {
@@ -25,7 +24,6 @@ html, body {
   height: 100vh;
 }
 
-/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -36,7 +34,6 @@ html, body {
   z-index: -1;
 }
 
-/* Main container */
 .login-container {
   height: 100vh;
   display: flex;
@@ -45,8 +42,6 @@ html, body {
   position: relative;
   z-index: 1;
 }
-
-/* Glassmorphic login card */
 .login-card {
   width: 100%;
   max-width: 400px;
@@ -60,14 +55,13 @@ html, body {
   color: #fff;
 }
 
-/* Section titles */
+
 .login-card h2 {
   margin-bottom: 2rem;
   font-weight: 600;
   text-align: center;
 }
 
-/* Form layouts */
 .login-card form,
 #register-section {
   display: flex;
@@ -100,15 +94,14 @@ html, body {
   padding: 0.5rem 2rem;
   border-radius: 5px;
   background-color: rgba(1, 204, 245, 0.985);
-   flex: 1;               /* make both buttons equal width */
-  text-align: center;    /* center the text inside */
+   flex: 1;         
+  text-align: center;    
 }
 
-/* Button container for side-by-side buttons */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 1rem; /* space between buttons */
+  gap: 1rem; 
   margin-top: 0.5rem;
   padding: 0.4rem 4rem;
 }
@@ -123,13 +116,13 @@ html, body {
 .button-container a.btn:hover,
 #go-register:hover {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-  transform: translateY(-2px); /* optional small lift */
+  transform: translateY(-2px); 
 }
 #error-msg {
-  text-align: center;          /* center text */
-  color: #ff6b6b;              /* red color */
+  text-align: center;        
+  color: #ff6b6b;            
   font-weight: bold;
-  text-shadow: 0 0 1px #a51b1b, 0 0 5px #dd0505; /* glow effect */
+  text-shadow: 0 0 1px #a51b1b, 0 0 5px #dd0505; 
   transition: all 0.3s ease;
   margin-top: 0.5rem;
 }
@@ -157,4 +150,5 @@ html, body {
 .parent-container {
   display: flex;
   justify-content: center;   /* centers children horizontally */
+
 }
