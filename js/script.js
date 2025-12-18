@@ -254,33 +254,7 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
         wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
     });
 
-    // ===== DISTANCE GRAPH =====
-    const bars = document.querySelectorAll(".distance-graph .bar");
-    const maxAU = Math.max(...Array.from(bars).map(b => parseFloat(b.dataset.au)));
 
-    bars.forEach(bar => {
-        const au = parseFloat(bar.dataset.au);
-        const heightPercent = (au / maxAU) * 100; 
-        bar.style.height = heightPercent + "%";
-    });
-
-    if (window.innerWidth < 768) {
-        bars.forEach(bar => {
-            const currentHeight = parseFloat(bar.style.height);
-            bar.style.height = (currentHeight * 0.65) + '%';
-        });
-    }
-
-    window.addEventListener("resize", () => {
-        const maxAU = Math.max(...Array.from(bars).map(b => parseFloat(b.dataset.au)));
-        bars.forEach(bar => {
-            const au = parseFloat(bar.dataset.au);
-            let heightPercent = (au / maxAU) * 100;
-            if (window.innerWidth < 768) heightPercent *= 0.65;
-            bar.style.height = heightPercent + "%";
-        });
-    });
-});
 
 
 
