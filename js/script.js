@@ -258,7 +258,16 @@ document.querySelectorAll('.orbit').forEach(orbit => {
     const angle = Math.random() * 360;
 
     wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
+
 });
+
+if (window.innerWidth < 768) {
+    document.querySelectorAll('.distance-graph .bar').forEach(bar => {
+        const currentHeight = parseFloat(bar.style.height);
+        bar.style.height = (currentHeight * 0.65) + 'px'; 
+    });
+}
+
 
 
 
