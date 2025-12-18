@@ -40,42 +40,39 @@ h1 {
 
 }
 .navbar-title {
-  font-family: 'Syncopate-Bold', sans-serif !important; /* your font */
-  font-size: 12px !important;                          /* adjust size */
-  letter-spacing: 1px;                                   /* optional spacing between letters */
+  font-family: 'Syncopate-Bold', sans-serif !important; 
+  font-size: 12px !important;                         
+  letter-spacing: 1px;                                  
 }
 
-/* Make main content expand to fill available space */
 .container-fluid.mt-4 {
   flex: 1 0 auto;   
-  padding-top: 100px;                  /* grows as needed */
+  padding-top: 100px;                
 }
 
-/* Fix the navbar at the top */
 #main-navbar {
-  position: fixed;             /* stays on top while scrolling */
+  position: fixed;           
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1050;               /* above everything */
+  z-index: 1050;             
 }
 .row.g-4 { height: calc(100vh - 120px); display: flex; }
 
 .col-lg-3.col-md-4 {
-  flex: 0 0 220px !important;   /* ← this controls the width */
-  max-width: 220px !important;  /* ← make it super slim */
+  flex: 0 0 220px !important;   
+  max-width: 220px !important; 
   padding: 20px 10px !important;
 }
-.title-down { padding-top: 100px !important; }   /* ← increase = title goes lower */
+.title-down { padding-top: 100px !important; } 
 
-/* Optional: even slimmer on medium screens */
 @media (max-width: 992px) {
   .col-lg-3.col-md-4 {
     flex: 0 0 180px !important;
     max-width: 180px !important;
   }
 }
-/* Make sure navbar text/links stay on top */
+
 .navbar-brand,
 .navbar-nav .nav-link,
 .form-check-label {
@@ -83,25 +80,22 @@ h1 {
   z-index: 1;
 }
 
-/* Navbar brand/logo */
 #main-navbar .navbar-brand img {
   border-radius: 50%;
 }
 
-/* Navbar links */
 #main-navbar .nav-link {
   position: relative;
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
 
-@media (min-width: 992px) {        /* only on lg and up, keeps mobile click working */
+@media (min-width: 992px) {     
   .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
     margin-top: 0;
   }
   
-  /* Smooth fade-in */
   .dropdown-menu {
     transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 0;
@@ -117,16 +111,14 @@ h1 {
   }
 }
 
-/* Starfield inside dropdown + glassy dark look */
 .dropdown-menu {
-  background: rgba(10, 10, 30, 0.85) !important;   /* Deep space color */
-  backdrop-filter: blur(10px);                     /* Glassmorphism */
+  background: rgba(10, 10, 30, 0.85) !important;   
+  backdrop-filter: blur(10px);                     
   border: 1px solid rgba(100, 150, 255, 0.3);
   border-radius: 12px;
-  overflow: hidden;                                /* Important for the pseudo-canvas */
+  overflow: hidden;                                
 }
 
-/* This creates moving stars inside the dropdown */
 .dropdown-menu::before {
   content: "";
   position: absolute;
@@ -154,7 +146,6 @@ h1 {
   to   { background-position: 0 100px; }
 }
 
-/* Make dropdown items pop */
 .dropdown-item {
   color: #bbd0ff !important;
   transition: all 0.2s ease;
@@ -166,11 +157,11 @@ h1 {
   text-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
 }
 #main-navbar {
-  z-index: 1050;                       /* Same as Bootstrap navbar default */
+  z-index: 1050;                     
 }
 
 #starfield {
-  z-index: 0;                          /* Behind everything */
+  z-index: 0;                        
 
 }
 #main-navbar .position-relative,
@@ -178,19 +169,18 @@ h1 {
 #main-navbar button,
 #main-navbar ul,
 #main-navbar .dropdown-menu {
-  z-index: 10;                         /* Above the canvas */
+  z-index: 10;                        
 }
 
-/* Make sure dropdown appears above canvas */
-.dropdown-menu {
-  z-index: 1060 !important;            /* Higher than navbar */
 
+.dropdown-menu {
+  z-index: 1060 !important;         
 }#toggle-dark-navbar {
   position: absolute;
   opacity: 0;
 }
 
-/* Toggle track */
+
 .toggle-label {
   position: relative;
   display: inline-block;
@@ -203,7 +193,7 @@ h1 {
   overflow: hidden;
 }
 
-/* Icon (sun/moon) */
+
 .toggle-icon {
   position: absolute;
   font-size: 20px;
@@ -215,7 +205,7 @@ h1 {
   pointer-events: none;
 }
 
-/* Comet Trail */
+
 .toggle-comet {
   position: absolute;
   top: 50%;
@@ -239,7 +229,6 @@ h1 {
   pointer-events: none;
 }
 
-/* Trail particle */
 .trail-particle {
   position: absolute;
   width: 6px;
@@ -252,7 +241,6 @@ h1 {
   animation-fill-mode: forwards;
 }
 
-/* Moon color */
 .trail-particle.moon-mode {
   background: #00eaff;
   filter: drop-shadow(0 0 10px #00eaff);
@@ -263,14 +251,12 @@ h1 {
   100% { transform: translateX(var(--distance, 28px)) translateY(var(--scatter-y)) scale(0.3); opacity: 0; }
 }
 
-/* DARK MODE — move icon to right (moon) */
 #toggle-dark-navbar:checked + .toggle-label .toggle-icon {
   left: 34px;
   content: "🌙";
   filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff);
 }
 
-/* Comet trail activates */
 #toggle-dark-navbar:checked + .toggle-label .toggle-comet {
   opacity: 1;
   width: 26px;
@@ -280,42 +266,37 @@ h1 {
   animation: cometMove 0.35s ease forwards;
 }
 
-/* COMET MOVEMENT */
 @keyframes cometMove {
   0% { transform: translate(-5px, -50%); opacity: 1; }
   100% { transform: translate(25px, -50%); opacity: 0; }
 }
 
-/* Light mode sun glow */
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-icon {
   filter: drop-shadow(0 0 6px #ffdd55) drop-shadow(0 0 12px #ffcc33);
 }
 
-/* Light mode comet (reverse direction) */
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-comet {
   background: linear-gradient(to right, rgba(255,200,0,0.8), transparent);
 }
-/* Light mode overlay */
+
 body.light-mode::before,
 body.dark-mode::before {
   content: "";
-  position: fixed; /* fixed so it covers viewport */
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1; /* behind content but above background */
+  z-index: -1;
 }
 
-/* Light mode tint */
 body.light-mode::before {
-  background-color: rgba(255,255,255,0.05); /* slight light tint */
+  background-color: rgba(255,255,255,0.05); 
 }
 
-/* Dark mode overlay */
 body.dark-mode::before {
-  background-color: rgba(0,0,0,0.7); /* dark overlay */
+  background-color: rgba(0,0,0,0.7); 
 }
 body.dark-mode .login-card,
 body.dark-mode .register-card,
@@ -325,18 +306,15 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
 }
 
-
-/* Fixed top and background */
 #main-navbar {
   position: relative;    
-  background: rgba(211, 194, 194, 0.56); /* fallback color */
+  background: rgba(211, 194, 194, 0.56);
 
 }
   .navbar .dropdown-toggle::after {
-  display: none; /* hides the arrow */
+  display: none; 
 }
 
-/* Make sure navbar text/links stay on top */
 .navbar-brand,
 .navbar-nav .nav-link,
 .form-check-label {
@@ -344,7 +322,6 @@ body.dark-mode .dashboard-chart-card {
   z-index: 1;
 }
 
-/* Navbar link hover effect */
 .navbar-nav .nav-link {
   position: relative;
   transition: color 0.3s ease;
@@ -358,30 +335,29 @@ body.dark-mode .dashboard-chart-card {
 .row.g-4 {
   height: calc(100vh - 120px);
   display: flex;
-  --bs-gutter-x: 60rem !important;   /* ← THIS controls the gap */
+  --bs-gutter-x: 60rem !important;  
 }
 
-/* LEFT: Planet list */
 .planet-list .list-group-item {
-  background: rgba(20, 30, 60, 0.65) !important;   /* deep blue-purple glass */
+  background: rgba(20, 30, 60, 0.65) !important;  
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 255, 255, 0.3) !important;
-  color: #a0f7ff !important;                     /* light cyan text */
+  color: #a0f7ff !important;                    
   text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
   border-radius: 12px !important;
-  margin: 15px auto !important;     /* top/bottom = 20px, left/right = auto (centers it) */
-  padding: 25px 45px !important;    /* optional: also makes the card itself taller */
-  height: 68px !important;          /* ← same height for all */
-  min-height: 68px !important;      /* fallback */
-  width: 220px !important;          /* ← same width (you already love 220px on desktop) */
+  margin: 15px auto !important;     
+  padding: 25px 45px !important;    
+  height: 68px !important;          
+  min-height: 68px !important;    
+  width: 220px !important;          
   max-width: 220px !important;
-  display: flex !important;         /* ← this magic centers the text perfectly */
+  display: flex !important;         
   align-items: center !important;
   justify-content: center !important;
-  padding: 0 !important;            /* remove old padding so flex does the job */
-  margin: 26px auto !important;     /* your nice spacing from before */
+  padding: 0 !important;            
+  margin: 26px auto !important;     
   text-align: center !important;
-  line-height: 1.2 !important;      /* prevents text from looking squished */
+  line-height: 1.2 !important;     
 
 }
 .planet-list .list-group-item:hover {
@@ -391,7 +367,6 @@ body.dark-mode .dashboard-chart-card {
 
 }
 
-/* SMALLER & CUTER INFO CARDS */
 .planet-info {
   position: absolute;
   left: 100%;
@@ -401,9 +376,9 @@ body.dark-mode .dashboard-chart-card {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(0,255,255,0.6);
   border-radius: 9px;
-  padding: 11px 16px;          /* ← smaller padding */
-  min-width: 160px;            /* ← smaller width */
-  font-size: 0.87rem;          /* ← smaller text */
+  padding: 11px 16px;          
+  min-width: 160px;            
+  font-size: 0.87rem;         
   box-shadow: 0 6px 25px rgba(0,255,255,0.3);
   opacity: 0;
   visibility: hidden;
@@ -426,31 +401,27 @@ body.dark-mode .dashboard-chart-card {
   line-height: 1.3;
 }
 
-/* Show on hover */
 .planet-item:hover .planet-info {
   opacity: 1;
   visibility: visible;
   left: 108%;
 }
 
-/* Perfect absolute centering – no matter what */
 .solar-system-wrapper {
-  width: 950px;           /* ← CHANGE THIS NUMBER TO MAKE IT BIGGER */
-  height: 900px;          /* ← must be same as width because it's a circle */
-  max-width: 95vw;        /* ← allows it to grow huge on big screens */
+  width: 950px;           
+  height: 900px;         
+  max-width: 95vw;       
   max-height: 95vh;
   aspect-ratio: 1/1;
   margin-top: 2400px;
   position: relative;
-  margin: -15vh auto 0 auto;   /* ← centers it perfectly vertically & horizontally */
+  margin: -15vh auto 0 auto;  
 }
 
-/* Force true center */
 .d-flex.justify-content-center.align-items-center.vh-100 {
   min-height: calc(100vh - 280px);
 }
 
-/* Sun – bulletproof centering */
 .sun {
   position: absolute !important;
   top: 50% !important;
@@ -466,7 +437,6 @@ body.dark-mode .dashboard-chart-card {
   object-fit: cover;
   border-radius: 50%;
 }
-/* ALL ORBITS SMALLER — fits perfectly, no cutoff */
 .orbit {
   position: absolute;
   top: 50%; left: 50%;
@@ -487,7 +457,6 @@ body.dark-mode .dashboard-chart-card {
   to   { transform: translate(-50%,-50%) rotate(360deg); }
 }
 
-/* SMALLER PLANETS */
 .planet-wrapper {
   position: absolute;
   top: 0; left: 50%;
@@ -499,31 +468,27 @@ body.dark-mode .dashboard-chart-card {
   border-radius: 50%;
   object-fit: cover;
   transition: all 0.4s ease;
-  transition: none !important;      /* remove any JS-applied transform/shadow */
+  transition: none !important;     
 
 }
 
 
-/* ONLY GLOW – when hovered from list */
 .orbit.highlight .planet-image {
   transform: scale(2.5);
   box-shadow: 0 0 70px rgba(0,255,255,1);
   z-index: 50;
 }
 
-/* INFO CARD – appears BESIDE the planet name in the list */
 .planet-item {
-  position: relative;        /* ← THIS IS CRUCIAL */
+  position: relative;     
   overflow: visible !important;
 }
 
-/* Highlight orbit line */
 .orbit.highlight {
   border-color: cyan;
   box-shadow: 0 0 30px rgba(0,255,255,0.6);
 }
 
-/* Mobile */
 @media (max-width: 992px) {
   .row.g-4 { flex-direction: column; height: auto; }
   .solar-system { height: 70vh; }
@@ -533,10 +498,9 @@ body.dark-mode .dashboard-chart-card {
 .right-list .planet-item:hover .planet-info,
 .right-list .planet-info.show {
   left: auto !important;
-  right: 110% !important;   /* ← this makes it pop to the left */
+  right: 110% !important;   
 }
 
-/* Arrow also needs to flip */
 .right-list .planet-info::before {
   left: 100% !important;
   right: auto !important;
@@ -544,7 +508,6 @@ body.dark-mode .dashboard-chart-card {
   border-left-color: rgba(0,255,255,0.7) !important;
 }
 
-/* Kill the flash – right-side cards instantly go left */
 .right-list .planet-info {
   left: auto !important;
   right: 110% !important;
@@ -553,13 +516,12 @@ body.dark-mode .dashboard-chart-card {
 
 .right-list .planet-item:hover .planet-info,
 .right-list .planet-info.show {
-  right: 115% !important;   /* slide-in distance */
+  right: 115% !important;  
   left: auto !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-/* Flip the arrow instantly too */
 .right-list .planet-info::before {
   left: 100% !important;
   right: auto !important;
@@ -577,12 +539,10 @@ body.dark-mode .dashboard-chart-card {
   border-bottom: 1px solid rgba(0, 0, 0, 0.907);
 }
 
-/* Push page content down so it doesn't hide under navbar */
 body.planet > .container-fluid.mt-4 {
-  padding-top: 120px !important;   /* adjust if your navbar height changes */
+  padding-top: 120px !important;  
 }
 
-/* Starfield canvas must stay behind navbar but cover full page */
 #starfield {
   position: fixed !important;
   top: 0; left: 0;
@@ -635,7 +595,6 @@ body.planet > .container-fluid.mt-4 {
   z-index: 10;
 }
 
-/* Staggered entrance animation */
 .distance-graph .bar:nth-child(1) { animation-delay: 0.1s; }
 .distance-graph .bar:nth-child(2) { animation-delay: 0.2s; }
 .distance-graph .bar:nth-child(3) { animation-delay: 0.3s; }
@@ -819,6 +778,7 @@ footer {
 .orbit-6 .planet-wrapper { transform: rotate(250deg) translateX(var(--orbit-radius)); }
 .orbit-7 .planet-wrapper { transform: rotate(295deg) translateX(var(--orbit-radius)); }
 .orbit-8 .planet-wrapper { transform: rotate(340deg) translateX(var(--orbit-radius)); }
+
 
 
 
