@@ -780,6 +780,23 @@ footer {
 .orbit-7 .planet-wrapper { transform: rotate(295deg) translateX(var(--orbit-radius)); }
 .orbit-8 .planet-wrapper { transform: rotate(340deg) translateX(var(--orbit-radius)); }
 
+@media (max-width: 768px) {
+  .solar-system-wrapper {
+    transform: scale(0.65);
+    transform-origin: top center;
+  }
+}
+@media (max-width: 768px) {
+  .solar-system-wrapper {
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .planet-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+}
 
 
 
