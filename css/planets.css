@@ -798,6 +798,25 @@ footer {
     height: 32px;
   }
 }
+.distance-graph .bar {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end;   
+    overflow: hidden;       
+    text-align: center;
+    padding: 2px;           
+    box-sizing: border-box;  
+}
+
+.distance-graph .bar span {
+    font-size: clamp(10px, 2vw, 14px); 
+    word-wrap: break-word;           
+}
+@media (max-width: 768px) {
+    .distance-graph .bar span {
+        font-size: clamp(8px, 2vw, 12px);
+    }
+}
 
 
 
