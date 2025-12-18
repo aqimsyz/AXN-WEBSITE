@@ -8,14 +8,12 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
-@media (min-width: 992px) {        /* only on lg and up, keeps mobile click working */
+@media (min-width: 992px) {       
   .nav-item.dropdown:hover > .dropdown-menu {
     display: block;
     margin-top: 0;
   }
   
-
-  /* Smooth fade-in */
   .dropdown-menu {
     transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 0;
@@ -37,29 +35,26 @@ body {
     src: url(../font/Syncopate-Bold.ttf);
 }
 .navbar-nav {
-  display: flex !important;                /* ensure flex layout */
-  gap: 1rem !important;                    /* space between items */
-  font-family: 'Syncopate-Bold', sans-serif !important;  /* your custom font */
+  display: flex !important;                
+  gap: 1rem !important;                
+  font-family: 'Syncopate-Bold', sans-serif !important; 
   font-size: 12px !important; 
 
 }
 .navbar-title {
   font-family: 'Syncopate-Bold', sans-serif !important; /* your font */
-  font-size: 12px !important;                          /* adjust size */
-  letter-spacing: 1px;                                   /* optional spacing between letters */
+  font-size: 12px !important;                          
+  letter-spacing: 1px;                                
 }
 
-
-/* Starfield inside dropdown + glassy dark look */
 .dropdown-menu {
-  background: rgba(10, 10, 30, 0.85) !important;   /* Deep space color */
-  backdrop-filter: blur(10px);                     /* Glassmorphism */
+  background: rgba(10, 10, 30, 0.85) !important;  
+  backdrop-filter: blur(10px);                    
   border: 1px solid rgba(100, 150, 255, 0.3);
   border-radius: 12px;
-  overflow: hidden;                                /* Important for the pseudo-canvas */
-}
+  overflow: hidden;                                
 
-/* This creates moving stars inside the dropdown */
+
 .dropdown-menu::before {
   content: "";
   position: absolute;
@@ -99,13 +94,13 @@ body {
   text-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
 }
 #main-navbar {
-  overflow: visible !important;        /* Crucial */
-  z-index: 1050;                       /* Same as Bootstrap navbar default */
+  overflow: visible !important;        
+  z-index: 1050;                       
 }
 
 #starfield {
-  z-index: 0;                          /* Behind everything */
-  pointer-events: none;                /* Lets clicks pass through to navbar */
+  z-index: 0;                       
+  pointer-events: none;               
 }
 
 #main-navbar .position-relative,
@@ -113,7 +108,7 @@ body {
 #main-navbar button,
 #main-navbar ul,
 #main-navbar .dropdown-menu {
-  z-index: 10;                         /* Above the canvas */
+  z-index: 10;                       
 }
 
 /* Make sure dropdown appears above canvas */
@@ -198,14 +193,14 @@ body {
   100% { transform: translateX(var(--distance, 28px)) translateY(var(--scatter-y)) scale(0.3); opacity: 0; }
 }
 
-/* DARK MODE — move icon to right (moon) */
+
 #toggle-dark-navbar:checked + .toggle-label .toggle-icon {
   left: 34px;
   content: "🌙";
   filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff);
 }
 
-/* Comet trail activates */
+
 #toggle-dark-navbar:checked + .toggle-label .toggle-comet {
   opacity: 1;
   width: 26px;
@@ -215,37 +210,36 @@ body {
   animation: cometMove 0.35s ease forwards;
 }
 
-/* COMET MOVEMENT */
 @keyframes cometMove {
   0% { transform: translate(-5px, -50%); opacity: 1; }
   100% { transform: translate(25px, -50%); opacity: 0; }
 }
 
-/* Light mode sun glow */
+
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-icon {
   filter: drop-shadow(0 0 6px #ffdd55) drop-shadow(0 0 12px #ffcc33);
 }
 
-/* Light mode comet (reverse direction) */
+
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-comet {
   background: linear-gradient(to right, rgba(255,200,0,0.8), transparent);
 }
-/* Light mode overlay */
+
 body.light-mode::before,
 body.dark-mode::before {
   content: "";
-  position: fixed; /* fixed so it covers viewport */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1; /* behind content but above background */
+  z-index: -1;
 }
 
 /* Light mode tint */
 body.light-mode::before {
-  background-color: rgba(255,255,255,0.05); /* slight light tint */
+  background-color: rgba(255,255,255,0.05); 
 }
 
 /* Dark mode overlay */
@@ -261,10 +255,9 @@ body.dark-mode .dashboard-chart-card {
 }
 
 
-/* Fixed top and background */
 #main-navbar {
-  position: relative;           /* Needed for the canvas to be positioned inside */
-  overflow: hidden;             /* Prevents stars from leaking out */
+  position: relative;           
+  overflow: hidden;            
   background: rgba(0, 0, 20, 0.8); /* fallback color */
 
 }
@@ -272,7 +265,7 @@ body.dark-mode .dashboard-chart-card {
   display: none; /* hides the arrow */
 }
 
-/* Make sure navbar text/links stay on top */
+
 .navbar-brand,
 .navbar-nav .nav-link,
 .form-check-label {
@@ -298,7 +291,7 @@ body.dark-mode .dashboard-chart-card {
   left: 0;
   width: 100%;
   z-index: 999;
-  background: rgb(0, 0, 6) !important;   /* slightly more transparent */
+  background: rgb(0, 0, 6) !important; 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
@@ -341,14 +334,12 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
 }
 
-/* Main flex container: chart left, cards right */
 .dashboard-main {
   display: flex;
   gap: 1.8rem;
   width: 100%;
   flex-wrap: wrap;
 }
-/* Chart card styling */
 .dashboard-chart-card {
   width: 650px;
   padding: 0.9rem;
@@ -377,7 +368,7 @@ body.dark-mode .dashboard-chart-card {
   background: rgba(255,255,255,0.03);
   border-radius: 12px;
   padding: 1px;
-  max-height: 500px;   /* ← CANVAS HEIGHT LIMIT */ 
+  max-height: 500px;
 }
 
 .chart-title {
@@ -390,9 +381,9 @@ body.dark-mode .dashboard-chart-card {
 
 #tempChartCard,
 .dashboard-orbit-card {
-  flex: 1;           /* each takes half of right column */   
+  flex: 1;            
   min-width: 150px;  
-  height: 400px;     /* smaller height */
+  height: 400px;  
   max-width: 1200px; 
 }
 
@@ -408,13 +399,13 @@ body.dark-mode .dashboard-chart-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 700px; /* optional limit */
+  max-width: 700px; 
 }
 
 .dashboard-totals .card {
-  width: 90px;      /* smaller */
-  height: 90px;      /* shorter */
-  padding: 0.5rem;   /* less padding */
+  width: 90px;     
+  height: 90px;     
+  padding: 0.5rem; 
 }
 
 .dashboard-totals .card h5 {
@@ -433,7 +424,7 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .dashboard-main {
     flex-direction: column;
@@ -450,7 +441,7 @@ body.dark-mode .dashboard-chart-card {
   }
 }
 
-/* Dashboard Event Card */
+
 .dashboard-event-card {
   border-radius: 12px;
   background: rgba(255,255,255,0.07);
@@ -547,9 +538,9 @@ body.dark-mode .dashboard-chart-card {
 .space-events-wrapper {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-events 60s linear infinite; /* slower scroll */
-  animation-delay: 0s; /* appear immediately on page load */
-  vertical-align: middle; /* aligns text vertically inside container */
+  animation: scroll-events 60s linear infinite;
+  animation-delay: 0s;
+  vertical-align: middle; 
 }
 
 
@@ -575,16 +566,15 @@ body.dark-mode .dashboard-chart-card {
 .page-wrapper {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 60px; /* space for the footer height */
+  padding-bottom: 60px; 
 }
 
-/* Footer stays at bottom */
 .dashboard-footer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* same as padding-bottom in wrapper */
+  height: 100px; 
   color: #bbb;
   font-size: 0.9rem;
   text-align: center;
@@ -635,19 +625,16 @@ body.dark-mode .dashboard-chart-card {
     height: auto !important;
   }
 
-  /* Fix the right-top flex (temp chart + orbit) to stack on very small screens */
   .dashboard-right .right-top {
     display: flex;
     flex-direction: column;
   }
 
-  /* Make orbit animation smaller and centered */
   .orbit-animation {
     transform: scale(0.75);
     margin: 0 auto;
   }
 
-  /* Three small cards stack full-width */
   .dashboard-totals {
     flex-direction: column;
     align-items: center;
@@ -676,18 +663,16 @@ body.dark-mode .dashboard-chart-card {
   }
 }
 
-/* FINAL RESPONSIVE CHARTS – perfect on every device */
-/* Mobile & tablet */
 #planetChart,
 #tempChart {
   height: 380px !important;           /* nice height on phones */
   object-fit: contain;                /* never stretched, always round bubbles */
 }
 
-/* Desktop only – bring back your original beautiful heights */
+
 @media (min-width: 992px) {
-  #planetChart  { height: 380px !important; }   /* or 350px if you prefer */
-  #tempChart    { height: 300px !important; }   /* ← this stops the “cramped to top” */
+  #planetChart  { height: 380px !important; }   
+  #tempChart    { height: 300px !important; } 
 }
 @media (max-width: 950px) {
   .dashboard-totals .card {
@@ -698,10 +683,8 @@ body.dark-mode .dashboard-chart-card {
   }
 }
 
-/* GLOSSY GLASSMORPHISM EFFECT FOR ALL CARDS */
-
 .dashboard-totals .card {
-  background: rgba(2, 5, 23, 0.61) !important;          /* Deep space blue with transparency */
+  background: rgba(2, 5, 23, 0.61) !important;        
   backdrop-filter: blur(16px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
   border: 1.5px solid rgba(120, 140, 255, 0.25) !important;
@@ -715,7 +698,6 @@ body.dark-mode .dashboard-chart-card {
   transition: all 0.4s ease;
 }
 
-/* Subtle shine highlight (the "glossy" moving light) */
 .dashboard-totals .card::before {
   content: "";
   position: absolute;
@@ -736,8 +718,6 @@ body.dark-mode .dashboard-chart-card {
 .totals .card:hover::before {
   left: 100%;
 }
-
-/* Extra glow on hover */
 .totals .card:hover {
   transform: translateY(-6px);
   box-shadow: 
@@ -761,7 +741,7 @@ body.dark-mode .dashboard-chart-card {
 
 .dashboard-totals .card .card-text,
 .dashboard-totals .card p.display-4 {
-  font-size: 1.2rem !important;              /* Huge number */
+  font-size: 1.2rem !important;          
   font-weight: 900 !important;
   background: linear-gradient(135deg, #7e90ff, #c0d8ff, #7ef3ff);
   -webkit-background-clip: text;
@@ -772,14 +752,11 @@ body.dark-mode .dashboard-chart-card {
     0 0 40px rgba(100, 150, 255, 0.4) !important;
   margin: 0 !important;
 }
-
-/* Fix: Bring back bubble chart tooltips on hover */
 .dashboard-chart-card::before {
-  pointer-events: none !important;   /* ← this lets mouse clicks pass through the shine layer */
-  z-index: 0 !important;             /* ← keeps it behind the canvas */
+  pointer-events: none !important;   
+  z-index: 0 !important;             
 }
 
-/* Make sure the canvas itself can receive hover */
 #planetChart {
   position: relative;
   z-index: 1 !important;
@@ -793,23 +770,53 @@ body.dark-mode .dashboard-chart-card {
 }
 
 body.dark-mode .dashboard-orbit-card {
-  background-color: rgba(20, 20, 40, 0.85); /* darker background */
-  border: 1px solid rgba(100, 150, 255, 0.2); /* softer border */
+  background-color: rgba(20, 20, 40, 0.85); 
+  border: 1px solid rgba(100, 150, 255, 0.2);
   backdrop-filter: blur(16px) saturate(180%);
 }
 
-/* Dark mode planets (optional: make glows more visible) */
+
 body.dark-mode .orbit-animation .planet {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* subtle glow for visibility */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
-/* Dark mode Sun */
+
 body.dark-mode .sun {
   box-shadow: 0 0 20px #FFD700;
 }
 
-/* If you have orbit lines (optional) */
 body.dark-mode .orbit {
   border: 1px solid rgba(255,255,255,0.1);
 }
+
+@media (max-width: 991.98px) {
+  .dashboard-chart-card {
+    min-height: 420px;  
+    padding-bottom: 1.5rem;
+  }
+
+  #planetChart {
+    height: 380px !important; 
+  }
+}
+
+@media (max-width: 991.98px) {
+  .dashboard-orbit-card {
+    min-height: 320px;  
+  }
+
+  .orbit-animation {
+    height: 260px;   
+    transform: scale(0.8);
+    transform-origin: center;
+  }
+}
+
+  @media (max-width: 991.98px) {
+  .sun,
+  .orbit {
+    top: 50%;
+  }
+}
+
 
