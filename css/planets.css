@@ -808,13 +808,18 @@ footer {
     box-sizing: border-box;  
 }
 
-.distance-graph .bar span {
-    font-size: 10px; 
-    word-wrap: break-word;           
+.graph-labels span {
+    font-size: 12px; 
+    text-align: center;
 }
-@media (max-width: 768px) {
-    .distance-graph .bar span {
+
+@media (max-width: 580px) {
+    .graph-labels span {
         font-size: 8px;
+    }
+
+    .distance-graph .bar {
+        max-height: 100px;
     }
 }
 
