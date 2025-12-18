@@ -299,3 +299,25 @@ ul li a:hover {
         background-size: contain;
     }
 }
+
+@media (max-width: 480px) {
+    .earth-img::before {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 140px;
+        background-size: contain;
+        background-position: bottom center;
+    }
+
+    .earth-img::after {
+        bottom: 60px;
+        right: 10%;
+        width: 25%;
+        height: auto;
+        background-size: contain;
+    }
+}
+
+
