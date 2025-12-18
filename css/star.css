@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    background: #050510 url(../images/bg2.jpg) center / cover no-repeat fixed;
+}
 html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #050510;
-    background-image: url(../images/bg2.jpg);
     display: flex;
     flex-direction: column;
     background-size: cover; 
@@ -266,7 +268,6 @@ body {
     padding-top: 82px;   
 }
 
-/* Mobile adjustment */
 @media (max-width: 768px) {
     body {
         padding-top: 70px;
@@ -322,12 +323,19 @@ header {
     height: 10vh;       
 }
 
+@media (max-width: 768px) {
+    .constellation-container {
+        padding-right: 0;
+        margin-left: 0;
+    }
+}
+
 .constellation-container {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;      
     padding-right: 17px;         
-    width: 100vw;                 
+    width: 100%;               
     margin-left: calc(-50vw + 50%); 
     padding-left: 5vw;           
     padding-right: calc(5vw + 17px);
@@ -622,6 +630,7 @@ body.dark-mode #fact-counter {
     }
 
 }
+
 
 
 
