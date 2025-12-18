@@ -799,6 +799,37 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+
+  .distance-graph {
+    height: 160px !important;     
+    padding: 0 10px;
+  }
+
+  .distance-graph .bar {
+    margin: 0 3px;                  
+    border-radius: 6px 6px 0 0;
+  }
+
+  .graph-labels {
+    font-size: 0.7rem;            
+    gap: 4px;
+  }
+
+  .graph-labels span {
+    line-height: 1.1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow-glow h2 {
+    font-size: 1.1rem;
+    margin-bottom: 2rem !important;
+  }
+}
+
+
 
 
 
