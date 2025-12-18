@@ -278,46 +278,38 @@ ul li a:hover {
     }
 }
 
-/* --- Tablet (≤768px) --- */
-@media (max-width: 768px) {
-    .earth-img::after {
-        right: 50px;      /* move closer to center */
-        top: -20px;       /* adjust vertical position */
-        width: 25%;       /* scale down */
-        height: auto;
-        background-size: contain;
-    }
-}
-
-/* --- Mobile (≤480px) --- */
 @media (max-width: 480px) {
-    .earth-img::after {
-        right: 20px;      /* move closer to center */
-        top: 0;           /* align vertically with hero bottom */
-        width: 18%;       /* smaller on phones */
-        height: auto;
-        background-size: contain;
+    .earth-img {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 180px;
+        z-index: 1;
     }
-}
 
-@media (max-width: 480px) {
     .earth-img::before {
+        content: '';
+        position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        width: 70%;
+        width: 80%;
         height: 140px;
+        background-image: url(../images/globe.png);
+        background-repeat: no-repeat;
         background-size: contain;
         background-position: bottom center;
     }
 
     .earth-img::after {
+        content: '';
+        position: absolute;
         bottom: 60px;
-        right: 10%;
+        right: 8%;
         width: 25%;
-        height: auto;
+        background-image: url(../images/astronout.png);
+        background-repeat: no-repeat;
         background-size: contain;
     }
 }
-
-
