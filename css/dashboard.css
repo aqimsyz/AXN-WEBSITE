@@ -837,12 +837,12 @@ body.dark-mode .orbit {
   }
 }
 
-#planetChart,
-#tempChart {
+planetChart {
   width: 100% !important;
   height: auto !important;
   max-height: 380px;
 }
+
 
 
 
