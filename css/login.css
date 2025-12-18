@@ -73,7 +73,7 @@ html, body {
   display: none;
 }
 
-/* Inputs */
+
 .login-card .form-control {
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -105,11 +105,11 @@ html, body {
   margin-top: 0.5rem;
   padding: 0.4rem 4rem;
 }
-/* Glow effect on hover */
+
 .button-container button,
 .button-container a.btn,
 #go-register {
-  transition: all 0.3s ease; /* smooth transition */
+  transition: all 0.3s ease;
 }
 
 .button-container button:hover,
@@ -144,11 +144,55 @@ html, body {
   font-size: 0.9rem;
   color: #37c019;
   text-shadow: 0 0 10px #24af05;
-  text-align: center;       /* centers text inside box */
+  text-align: center;     
 }
 
 .parent-container {
   display: flex;
-  justify-content: center;   /* centers children horizontally */
+  justify-content: center;  
 
 }
+
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+  }
+
+  .login-container {
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+    align-items: flex-start;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.2rem;
+    border-radius: 16px;
+  }
+
+  .login-card .form-control {
+    padding: 0.75rem 1rem;
+  }
+
+  .login-card .form-control::placeholder {
+    padding: 0;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .login-card .btn-primary,
+  .login-card .btn-secondary {
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+
