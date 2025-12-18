@@ -547,7 +547,7 @@ body.dark-mode .dashboard-chart-card {
 .space-events-wrapper {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-events 60s linear infinite; 
+  animation: scroll-events 120s linear infinite; 
   animation-delay: 0s;
   vertical-align: middle; 
 }
@@ -567,9 +567,10 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
   font-weight: 500;
 }
+
 @keyframes scroll-events {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
 }
 
 .page-wrapper {
@@ -831,6 +832,7 @@ body.dark-mode .orbit {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
 
 
 
