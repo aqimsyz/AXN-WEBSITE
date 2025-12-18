@@ -21,7 +21,7 @@ body {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;                          /* Behind navbar & content */
+  z-index: 1;                         
   pointer-events: none;
 }
 
@@ -30,18 +30,31 @@ body {
     src: url(../font/Syncopate-Bold.ttf);
 }
 .navbar-nav {
-  display: flex !important;                /* ensure flex layout */
-  gap: 1rem !important;                    /* space between items */
-  font-family: 'Syncopate-Bold', sans-serif !important;  /* your custom font */
+  display: flex !important;                
+  gap: 1rem !important;                   
+  font-family: 'Syncopate-Bold', sans-serif !important; 
   font-size: 12px !important; 
 
 }
 .navbar-title {
-  font-family: 'Syncopate-Bold', sans-serif !important; /* your font */
-  font-size: 12px !important;                          /* adjust size */
-  letter-spacing: 1px;                                   /* optional spacing between letters */
+  font-family: 'Syncopate-Bold', sans-serif !important; 
+  font-size: 12px !important;                         
+  letter-spacing: 1px; 
+  white-space: normal;
 }
 
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1rem;  
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-title {
+        font-size: 0.9rem; 
+    }
+}
 
 .nav-link.active {
   color: #00d2ff !important;
@@ -577,4 +590,5 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
