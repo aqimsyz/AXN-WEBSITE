@@ -9,8 +9,8 @@ body.planet {
 }
 
 body{
-   padding-top: 100px;
-
+   padding-top: 80px;
+}
 h1 {
     font-size: 2vh;
     text-transform: uppercase;
@@ -796,6 +796,7 @@ footer {
 .orbit-6 .planet-wrapper { transform: rotate(250deg) translateX(var(--orbit-radius)); }
 .orbit-7 .planet-wrapper { transform: rotate(295deg) translateX(var(--orbit-radius)); }
 .orbit-8 .planet-wrapper { transform: rotate(340deg) translateX(var(--orbit-radius)); }
+
 
 
 
