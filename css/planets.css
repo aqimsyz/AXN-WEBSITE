@@ -43,7 +43,8 @@ h1 {
 .navbar-title {
   font-family: 'Syncopate-Bold', sans-serif !important; 
   font-size: 12px !important;                         
-  letter-spacing: 1px;                                  
+  letter-spacing: 1px; 
+  white-space: normal;
 }
 
 .container-fluid.mt-4 {
@@ -797,6 +798,7 @@ footer {
     height: 32px;
   }
 }
+
 
 
 
