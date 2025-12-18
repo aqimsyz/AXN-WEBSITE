@@ -12,7 +12,6 @@ body {
     overflow: hidden;    
     display: flex;       
     flex-direction: column;
-    background-image: url(../images/img2.jpg);
     background-size: 100% auto;
     padding-top: 80px;
 
@@ -26,6 +25,18 @@ body {
   z-index: 1;                         
   pointer-events: none;
 }
+
+html {
+    background: #000 url(../images/img2.jpg) center / cover no-repeat;
+}
+
+@media (min-width: 1024px) {
+    html {
+        background-size: 100% auto;
+    }
+}
+
+
 
 @font-face {
     font-family:"Syncopate-Bold";
@@ -572,6 +583,7 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
 
