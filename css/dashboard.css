@@ -7,7 +7,7 @@ body {
   background-position: center;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-top: 80px;
+  padding-top: 60px;
 }
 @media (min-width: 992px) {       
   .nav-item.dropdown:hover > .dropdown-menu {
@@ -842,6 +842,7 @@ body.dark-mode .orbit {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
 
 
 
