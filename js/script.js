@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const initStars = () => {
             stars = [];
-            const count = canvas.width < 150 ? 20 : 20;
+            const count = canvas.width < 150 ? 10 : 10;
             for (let i = 0; i < count; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
@@ -259,6 +259,7 @@ document.querySelectorAll('.orbit').forEach(orbit => {
 
     wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
 });
+
 
 
 
