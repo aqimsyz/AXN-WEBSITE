@@ -769,6 +769,9 @@ body.dark-mode .dashboard-chart-card {
   position: relative;
   z-index: 1 !important;
   pointer-events: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 380px;
 }
 
 .dashboard-chart-card, 
@@ -837,11 +840,6 @@ body.dark-mode .orbit {
   }
 }
 
-planetChart {
-  width: 100% !important;
-  height: auto !important;
-  max-height: 380px;
-}
 
 
 
