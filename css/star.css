@@ -16,7 +16,7 @@ html, body {
     background-size: cover; 
     overflow-x: hidden;  
     overflow-y: auto;
-    padding-top: 80px;
+    padding-top: 50px;
 
 }
 
@@ -615,6 +615,7 @@ body.dark-mode #fact-counter {
     }
 
 }
+
 
 
 
