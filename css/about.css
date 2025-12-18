@@ -14,6 +14,8 @@ body {
     flex-direction: column;
     background-image: url(../images/img2.jpg);
     background-size: 100% auto;
+    padding-top: 80px;
+
 }
 
 #starfield {
@@ -558,6 +560,7 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
 
