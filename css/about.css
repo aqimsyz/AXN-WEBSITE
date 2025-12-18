@@ -127,9 +127,23 @@ body {
   text-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
 }
 #main-navbar {
-  overflow: visible !important;       
-  z-index: 1050;  
-  background: rgba(0, 0, 6, 0.6);
+  position: fixed;
+  overflow: hidden;
+}
+
+#main-navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 80px 60px, #fff, transparent),
+    radial-gradient(2px 2px at 150px 40px, #fff, transparent);
+  background-size: 200px 100px;
+  animation: starfieldMove 25s linear infinite;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
 }
 
 #starfield {
@@ -558,6 +572,7 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
 
