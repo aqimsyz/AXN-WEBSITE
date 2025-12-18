@@ -245,22 +245,16 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
   window.location.href = 'index.html';
 });
 
-document.querySelectorAll('.orbit').forEach(orbit => {
-    const wrapper = orbit.querySelector('.planet-wrapper');
+  // ===== PLANET ORBITS =====
+    document.querySelectorAll('.orbit').forEach(orbit => {
+        const wrapper = orbit.querySelector('.planet-wrapper');
+        const radius = getComputedStyle(orbit).getPropertyValue('--orbit-radius').trim();
+        const radiusPx = radius.includes('px') ? radius : `${radius}px`;
+        const angle = Math.random() * 360;
+        wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
+    });
 
-
-    const radius = getComputedStyle(orbit).getPropertyValue('--orbit-radius').trim();
-
- 
-    const radiusPx = radius.includes('px') ? radius : `${radius}px`;
-
-
-    const angle = Math.random() * 360;
-
-    wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
-
-});
-
+    // ===== DISTANCE GRAPH =====
     const bars = document.querySelectorAll(".distance-graph .bar");
     const maxAU = Math.max(...Array.from(bars).map(b => parseFloat(b.dataset.au)));
 
@@ -287,6 +281,7 @@ document.querySelectorAll('.orbit').forEach(orbit => {
         });
     });
 });
+
 
 
 
