@@ -25,14 +25,6 @@ body {
   height: 100%;
   z-index: 1;                         
   pointer-events: none;
-    
-
-@media (min-width: 1024px) {
-    html {
-        background-size: 100% auto;
-    }
-}
-
 
 @font-face {
     font-family:"Syncopate-Bold";
@@ -579,6 +571,7 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
+
 
 
 
