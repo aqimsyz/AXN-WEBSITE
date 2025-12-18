@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (username === "user" && password === "1234") {
                 localStorage.setItem("cosmicUsername", username);
                 localStorage.setItem("cosmicLoginTime", Date.now().toString());
-                window.location.href = "loading.html";
+                window.location.href = "dashboard.html";
                 return;
             }
 
@@ -263,3 +263,4 @@ document.querySelectorAll('.orbit').forEach(orbit => {
 
     wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
 });
+
