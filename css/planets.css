@@ -1,12 +1,15 @@
 body.planet {
-  min-height: 100vh;          /* at least full viewport height */
+  min-height: 100vh;         
   display: flex;
-  flex-direction: column;      /* stack content and footer */
+  flex-direction: column;      
   margin: 0;
   background: #000 url('../images/bg.jpg') center/cover no-repeat fixed;
   color: #fff;
   overflow-x: hidden;
 }
+
+body{
+   padding-top: 100px;
 
 h1 {
     font-size: 2vh;
@@ -819,6 +822,7 @@ footer {
 .orbit-6 .planet-wrapper { transform: rotate(250deg) translateX(var(--orbit-radius)); }
 .orbit-7 .planet-wrapper { transform: rotate(295deg) translateX(var(--orbit-radius)); }
 .orbit-8 .planet-wrapper { transform: rotate(340deg) translateX(var(--orbit-radius)); }
+
 
 
 
