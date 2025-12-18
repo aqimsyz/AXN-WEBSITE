@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.textContent = events[(eventIndex + idx) % events.length];
       });
       eventIndex = (eventIndex + 1) % events.length;
-    }, 9000);
+    }, 40000);
   }
 
   // ===== PLANET SIZE BUBBLE CHART =====
@@ -233,5 +233,6 @@ if (planetChartCanvas) {
   }
 
 });
+
 
 
