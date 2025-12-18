@@ -811,6 +811,7 @@ footer {
 .graph-labels span {
     font-size: 12px; 
     text-align: center;
+    line-height: 1; 
 }
 
 @media (max-width: 580px) {
@@ -818,10 +819,8 @@ footer {
         font-size: 8px;
     }
 
-    .distance-graph .bar {
-        max-height: 100px;
-    }
-}
+
+
 
 
 
