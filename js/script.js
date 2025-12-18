@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const username = document.getElementById("username").value.trim();
             const password = document.getElementById("password").value;
 
-            // === HARD-CODED MASTER ACCOUNT (always works) ===
             if (username === "user" && password === "1234") {
                 localStorage.setItem("cosmicUsername", username);
                 localStorage.setItem("cosmicLoginTime", Date.now().toString());
@@ -17,11 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Get the registered credentials
             const savedUser = localStorage.getItem("registeredUser");
             const savedPass = localStorage.getItem("registeredPass");
 
-            // Check if they match
             if (username === savedUser && password === savedPass && savedUser) {
            
                 localStorage.setItem("cosmicUsername", username);
@@ -42,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ===== STARFIELD (only if exists) =====
     const canvas = document.getElementById("starfield");
     if (canvas) {
         const ctx = canvas.getContext("2d");
@@ -56,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const initStars = () => {
             stars = [];
-            const count = canvas.width < 600 ? 90 : 80;
+            const count = canvas.width < 200 ? 20 : 30;
             for (let i = 0; i < count; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
@@ -263,5 +259,6 @@ document.querySelectorAll('.orbit').forEach(orbit => {
 
     wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
 });
+
 
 
