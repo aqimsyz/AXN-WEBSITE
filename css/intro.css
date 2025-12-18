@@ -1,7 +1,7 @@
 html, body {
-  height: 100%;       /* full viewport height */
-  margin: 0;          /* remove default margin */
-  overflow: hidden;   /* disables scrolling */
+  height: 100%;     
+  margin: 0;        
+  overflow: hidden;   
 }
 
 @font-face {
@@ -325,5 +325,6 @@ ul li a:hover {
         background-size: contain;
     }
 }
+
 
 
