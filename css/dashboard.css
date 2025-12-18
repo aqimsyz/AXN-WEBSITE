@@ -163,7 +163,6 @@ body {
   pointer-events: none;
 }
 
-/* Comet Trail */
 .toggle-comet {
   position: absolute;
   top: 50%;
@@ -187,7 +186,6 @@ body {
   pointer-events: none;
 }
 
-/* Trail particle */
 .trail-particle {
   position: absolute;
   width: 6px;
@@ -199,8 +197,6 @@ body {
   filter: drop-shadow(0 0 6px #ffd86b);
   animation-fill-mode: forwards;
 }
-
-/* Moon color */
 .trail-particle.moon-mode {
   background: #00eaff;
   filter: drop-shadow(0 0 10px #00eaff);
@@ -227,7 +223,6 @@ body {
   animation: cometMove 0.35s ease forwards;
 }
 
-/* COMET MOVEMENT */
 @keyframes cometMove {
   0% { transform: translate(-5px, -50%); opacity: 1; }
   100% { transform: translate(25px, -50%); opacity: 0; }
@@ -255,7 +250,6 @@ body.dark-mode::before {
   z-index: -1; 
 }
 
-/* Light mode tint */
 body.light-mode::before {
   background-color: rgba(255,255,255,0.05); 
 }
@@ -279,7 +273,7 @@ body.dark-mode .dashboard-chart-card {
 
 }
   .navbar .dropdown-toggle::after {
-  display: none; /* hides the arrow */
+  display: none;
 }
 
 
@@ -315,19 +309,17 @@ body.dark-mode .dashboard-chart-card {
   transition: all 0.3s ease;
 }
 
-/* Navbar brand/logo */
 #main-navbar .navbar-brand img {
   border-radius: 50%;
 }
 
-/* Navbar links */
 #main-navbar .nav-link {
   position: relative;
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
 
-/* ===== DASHBOARD CONTAINER ===== */
+/* ===== DASHBOARD ===== */
 .dashboard-container {
   display: flex;
   gap: 2rem;
@@ -467,7 +459,6 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
 }
 
-/* Space Events List */
 .space-events .list-group-item {
   background: transparent;
   border: none;
@@ -564,7 +555,7 @@ body.dark-mode .dashboard-chart-card {
 
 .space-events {
   display: flex;
-  gap: 6rem; /* space between each event */
+  gap: 6rem; 
   margin: 0;
   padding: 0;
   list-style: none;
@@ -633,7 +624,6 @@ body.dark-mode .dashboard-chart-card {
     align-items: center;
   }
 
-  /* Full width for both columns on mobile */
   .dashboard-top-left,
   .dashboard-right,
   .dashboard-chart-card,
@@ -672,7 +662,6 @@ body.dark-mode .dashboard-chart-card {
     padding: 6rem 1rem 2rem 1rem;
   }
 
-  /* Live events readable */
   .space-events li {
     font-size: 1rem;
   }
@@ -842,6 +831,7 @@ body.dark-mode .orbit {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
 
 
 
