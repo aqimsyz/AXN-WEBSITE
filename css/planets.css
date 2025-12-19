@@ -818,15 +818,17 @@ footer {
     .graph-labels span {
         font-size: 10px;
     }
+}
 
 @media (min-width: 769px) {
   .graph-labels {
     max-width: 620px;
     margin: 0 auto;
     justify-content: center !important;
-    gap: 12px;
+    gap: 8px;
   }
 }
+
 
 
 
