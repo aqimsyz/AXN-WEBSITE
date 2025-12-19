@@ -824,9 +824,10 @@ footer {
   .graph-labels {
     max-width: 720px;
     margin: 0 auto;
-    gap: 15px;
+    gap: 17px;
   }
 }
+
 
 
 
