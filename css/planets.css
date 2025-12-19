@@ -822,11 +822,12 @@ footer {
 
 @media (min-width: 769px) {
   .graph-labels {
-    max-width: 920px;
+    max-width: 720px;
     margin: 0 auto;
-    gap: 16px;
+    gap: 15px;
   }
 }
+
 
 
 
