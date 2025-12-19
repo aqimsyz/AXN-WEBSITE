@@ -819,6 +819,13 @@ footer {
         font-size: 10px;
     }
 
+  @media (min-width: 769px) {
+  .graph-labels {
+    justify-content: space-evenly !important;
+  }
+}
+
+
 
 
 
