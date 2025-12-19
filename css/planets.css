@@ -825,9 +825,10 @@ footer {
     max-width: 620px;
     margin: 0 auto;
     justify-content: center !important;
-    gap: 8px;
+    gap: 16px;
   }
 }
+
 
 
 
