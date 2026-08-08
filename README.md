@@ -20,43 +20,6 @@ AXN Solar System Explorer combines planetary information, animated visualization
 
 ---
 
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Project Objectives](#project-objectives)
-- [System Highlights](#system-highlights)
-- [Application Flow](#application-flow)
-- [Pages and Modules](#pages-and-modules)
-  - [Home / Introduction](#1-home--introduction)
-  - [Registration](#2-registration)
-  - [Login](#3-login)
-  - [Animated Loading Experience](#4-animated-loading-experience)
-  - [Welcome / Landing Screen](#5-welcome--landing-screen)
-  - [Dashboard](#6-dashboard)
-  - [Planet Explorer](#7-planet-explorer)
-  - [Fun Facts & Habitability](#8-fun-facts--habitability)
-  - [Constellation Explorer](#9-constellation-explorer)
-  - [Lantern Message Experience](#10-lantern-message-experience)
-  - [About Page](#11-about-page)
-- [Dashboard Visualizations](#dashboard-visualizations)
-- [Planetary Data](#planetary-data)
-- [Constellation Content](#constellation-content)
-- [Browser-Based User Flow](#browser-based-user-flow)
-- [Technology Stack](#technology-stack)
-- [Front-End Architecture](#front-end-architecture)
-- [JavaScript Functionality](#javascript-functionality)
-- [Styling & Visual Design](#styling--visual-design)
-- [Responsive Design](#responsive-design)
-- [Project Structure](#project-structure)
-- [External Libraries & Resources](#external-libraries--resources)
-- [How to Run the Project](#how-to-run-the-project)
-- [Demo Login](#demo-login)
-- [How to Use the Website](#how-to-use-the-website)
-- [Information Systems Management Skills Demonstrated](#information-systems-management-skills-demonstrated)
-- [Project Credits](#project-credits)
-
----
-
 # Project Overview
 
 **AXN Solar System Explorer** is a space-themed educational web application designed to make Solar System information more engaging through interactive interfaces, animation, visual storytelling, and data visualization.
