@@ -1,8 +1,9 @@
+/* Fullscreen video background */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden; /* prevents scrolling */
 }
 
 .bg-video {
@@ -24,6 +25,7 @@ html, body {
   height: 100vh;
 }
 
+/* Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -34,6 +36,7 @@ html, body {
   z-index: -1;
 }
 
+/* Main container */
 .login-container {
   height: 100vh;
   display: flex;
@@ -42,6 +45,8 @@ html, body {
   position: relative;
   z-index: 1;
 }
+
+/* Glassmorphic login card */
 .login-card {
   width: 100%;
   max-width: 400px;
@@ -55,13 +60,14 @@ html, body {
   color: #fff;
 }
 
-
+/* Section titles */
 .login-card h2 {
   margin-bottom: 2rem;
   font-weight: 600;
   text-align: center;
 }
 
+/* Form layouts */
 .login-card form,
 #register-section {
   display: flex;
@@ -73,7 +79,7 @@ html, body {
   display: none;
 }
 
-
+/* Inputs */
 .login-card .form-control {
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -94,35 +100,36 @@ html, body {
   padding: 0.5rem 2rem;
   border-radius: 5px;
   background-color: rgba(1, 204, 245, 0.985);
-   flex: 1;         
-  text-align: center;    
+   flex: 1;               /* make both buttons equal width */
+  text-align: center;    /* center the text inside */
 }
 
+/* Button container for side-by-side buttons */
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 1rem; 
+  gap: 1rem; /* space between buttons */
   margin-top: 0.5rem;
   padding: 0.4rem 4rem;
 }
-
+/* Glow effect on hover */
 .button-container button,
 .button-container a.btn,
 #go-register {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* smooth transition */
 }
 
 .button-container button:hover,
 .button-container a.btn:hover,
 #go-register:hover {
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-  transform: translateY(-2px); 
+  transform: translateY(-2px); /* optional small lift */
 }
 #error-msg {
-  text-align: center;        
-  color: #ff6b6b;            
+  text-align: center;          /* center text */
+  color: #ff6b6b;              /* red color */
   font-weight: bold;
-  text-shadow: 0 0 1px #a51b1b, 0 0 5px #dd0505; 
+  text-shadow: 0 0 1px #a51b1b, 0 0 5px #dd0505; /* glow effect */
   transition: all 0.3s ease;
   margin-top: 0.5rem;
 }
@@ -144,55 +151,10 @@ html, body {
   font-size: 0.9rem;
   color: #37c019;
   text-shadow: 0 0 10px #24af05;
-  text-align: center;     
+  text-align: center;       /* centers text inside box */
 }
 
 .parent-container {
   display: flex;
-  justify-content: center;  
-
+  justify-content: center;   /* centers children horizontally */
 }
-
-
-@media (max-width: 768px) {
-  html, body {
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: auto;
-  }
-
-  .login-container {
-    min-height: 100vh;
-    padding: 1.5rem 1rem;
-    align-items: flex-start;
-  }
-
-  .login-card {
-    width: 100%;
-    max-width: 100%;
-    padding: 1.2rem;
-    border-radius: 16px;
-  }
-
-  .login-card .form-control {
-    padding: 0.75rem 1rem;
-  }
-
-  .login-card .form-control::placeholder {
-    padding: 0;
-  }
-
-  .button-container {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 0;
-  }
-
-  .login-card .btn-primary,
-  .login-card .btn-secondary {
-    width: 100%;
-    padding: 0.75rem;
-  }
-}
-
-

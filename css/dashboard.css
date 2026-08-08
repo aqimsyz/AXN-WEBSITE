@@ -5,9 +5,6 @@ body {
   background-image: url(../images/star.png);
   background-size: cover;
   background-position: center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding-top: 60px;
 }
 @media (min-width: 992px) {       
   .nav-item.dropdown:hover > .dropdown-menu {
@@ -15,6 +12,7 @@ body {
     margin-top: 0;
   }
   
+
   .dropdown-menu {
     transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 0;
@@ -43,34 +41,17 @@ body {
 
 }
 .navbar-title {
-  font-family: 'Syncopate-Bold', sans-serif !important; 
-  font-size: 12px !important;                          
-  letter-spacing: 1px;  
-  white-space: normal;
-
+  font-family: 'Syncopate-Bold', sans-serif !important;
+  font-size: 12px !important;                         
+  letter-spacing: 1px;                                  
 }
-
-@media (max-width: 768px) {
-    .navbar-title {
-        font-size: 1rem;  
-        letter-spacing: 0.5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-title {
-        font-size: 0.9rem; 
-    }
-}
-
-
 
 .dropdown-menu {
-  background: rgba(10, 10, 30, 0.85) !important;  
+  background: rgba(10, 10, 30, 0.85) !important;   
   backdrop-filter: blur(10px);                     
   border: 1px solid rgba(100, 150, 255, 0.3);
   border-radius: 12px;
-  overflow: hidden;                             
+  overflow: hidden;                               
 }
 
 .dropdown-menu::before {
@@ -100,7 +81,6 @@ body {
   to   { background-position: 0 100px; }
 }
 
-
 .dropdown-item {
   color: #bbd0ff !important;
   transition: all 0.2s ease;
@@ -112,13 +92,13 @@ body {
   text-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
 }
 #main-navbar {
-  overflow: visible !important;       
-  z-index: 1050;                      
+  overflow: visible !important;        
+  z-index: 1050;                       
 }
 
 #starfield {
-  z-index: 0;                          
-  pointer-events: none;              
+  z-index: 0;                       
+  pointer-events: none;                
 }
 
 #main-navbar .position-relative,
@@ -126,7 +106,7 @@ body {
 #main-navbar button,
 #main-navbar ul,
 #main-navbar .dropdown-menu {
-  z-index: 10;                       
+  z-index: 10;                        
 }
 
 
@@ -151,7 +131,6 @@ body {
   overflow: hidden;
 }
 
-
 .toggle-icon {
   position: absolute;
   font-size: 20px;
@@ -162,6 +141,7 @@ body {
   filter: drop-shadow(0 0 4px #ffdd55);
   pointer-events: none;
 }
+
 
 .toggle-comet {
   position: absolute;
@@ -186,6 +166,7 @@ body {
   pointer-events: none;
 }
 
+
 .trail-particle {
   position: absolute;
   width: 6px;
@@ -197,6 +178,7 @@ body {
   filter: drop-shadow(0 0 6px #ffd86b);
   animation-fill-mode: forwards;
 }
+
 .trail-particle.moon-mode {
   background: #00eaff;
   filter: drop-shadow(0 0 10px #00eaff);
@@ -207,12 +189,12 @@ body {
   100% { transform: translateX(var(--distance, 28px)) translateY(var(--scatter-y)) scale(0.3); opacity: 0; }
 }
 
+
 #toggle-dark-navbar:checked + .toggle-label .toggle-icon {
   left: 34px;
   content: "🌙";
   filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff);
 }
-
 
 #toggle-dark-navbar:checked + .toggle-label .toggle-comet {
   opacity: 1;
@@ -223,21 +205,19 @@ body {
   animation: cometMove 0.35s ease forwards;
 }
 
+
 @keyframes cometMove {
   0% { transform: translate(-5px, -50%); opacity: 1; }
   100% { transform: translate(25px, -50%); opacity: 0; }
 }
 
-/* Light mode sun glow */
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-icon {
   filter: drop-shadow(0 0 6px #ffdd55) drop-shadow(0 0 12px #ffcc33);
 }
 
-
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-comet {
   background: linear-gradient(to right, rgba(255,200,0,0.8), transparent);
 }
-
 body.light-mode::before,
 body.dark-mode::before {
   content: "";
@@ -250,11 +230,12 @@ body.dark-mode::before {
   z-index: -1; 
 }
 
+
 body.light-mode::before {
-  background-color: rgba(255,255,255,0.05); 
+  background-color: rgba(255,255,255,0.05);
 }
 
-/* Dark mode overlay */
+
 body.dark-mode::before {
   background-color: rgba(0,0,0,0.7); 
 }
@@ -267,15 +248,14 @@ body.dark-mode .dashboard-chart-card {
 }
 
 #main-navbar {
-  position: relative;          
-  overflow: hidden;           
-  background: rgba(0, 0, 20, 0.8); 
+  position: relative;           /* Needed for the canvas to be positioned inside */
+  overflow: hidden;             /* Prevents stars from leaking out */
+  background: rgba(0, 0, 20, 0.8); /* fallback color */
 
 }
   .navbar .dropdown-toggle::after {
-  display: none;
+  display: none; /* hides the arrow */
 }
-
 
 .navbar-brand,
 .navbar-nav .nav-link,
@@ -283,7 +263,6 @@ body.dark-mode .dashboard-chart-card {
   position: relative;
   z-index: 1;
 }
-
 
 .navbar-nav .nav-link {
   position: relative;
@@ -295,14 +274,13 @@ body.dark-mode .dashboard-chart-card {
   text-shadow: 0 0 5px #58A6FF;
 }
 
-/* ---------- NAVBAR ---------- */
 #main-navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 999;
-  background: rgb(0, 0, 6) !important;   
+  background: rgb(0, 0, 6) !important;   /* slightly more transparent */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
@@ -319,7 +297,6 @@ body.dark-mode .dashboard-chart-card {
   transition: color 0.3s ease;
 }
 
-/* ===== DASHBOARD ===== */
 .dashboard-container {
   display: flex;
   gap: 2rem;
@@ -333,7 +310,6 @@ body.dark-mode .dashboard-chart-card {
   flex-direction: column;
 }
 
-/* Dashboard Heading */
 .dashboard-container h1 {
   width: 100%;
   text-align: center;
@@ -343,14 +319,12 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
 }
 
-
 .dashboard-main {
   display: flex;
   gap: 1.8rem;
   width: 100%;
   flex-wrap: wrap;
 }
-/* Chart card styling */
 .dashboard-chart-card {
   width: 650px;
   padding: 0.9rem;
@@ -360,7 +334,6 @@ body.dark-mode .dashboard-chart-card {
   max-width: 1500px;
 }
 
-/* Chart canvas size */
 .dashboard-chart-card canvas {
   width: 100%;
   height: 100%;
@@ -392,9 +365,9 @@ body.dark-mode .dashboard-chart-card {
 
 #tempChartCard,
 .dashboard-orbit-card {
-  flex: 1;            
+  flex: 1;          
   min-width: 150px;  
-  height: 400px;  
+  height: 400px;     
   max-width: 1200px; 
 }
 
@@ -410,21 +383,21 @@ body.dark-mode .dashboard-chart-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 700px; 
+  max-width: 700px;
 }
 
 .dashboard-totals .card {
   width: 90px;     
   height: 90px;      
-  padding: 0.5rem;  
+  padding: 0.5rem;   
 }
 
 .dashboard-totals .card h5 {
-  font-size: 12px;  
+  font-size: 12px;   
 }
 
 .dashboard-totals .card p {
-  font-size: 24px;   
+  font-size: 24px;  
 }
 .dashboard-right .card {
   border-radius: 12px;
@@ -434,6 +407,7 @@ body.dark-mode .dashboard-chart-card {
   padding: 1.2rem;
   color: #fff;
 }
+
 
 @media (max-width: 768px) {
   .dashboard-main {
@@ -451,7 +425,6 @@ body.dark-mode .dashboard-chart-card {
   }
 }
 
-/* Dashboard Event Card */
 .dashboard-event-card {
   border-radius: 12px;
   background: rgba(255,255,255,0.07);
@@ -489,7 +462,6 @@ body.dark-mode .dashboard-chart-card {
   box-shadow: 0 0 15px #FFD700;
 }
 
-
 .orbit {
   position: absolute;
   top: 40%;
@@ -526,7 +498,7 @@ body.dark-mode .dashboard-chart-card {
 .live-event-title {
   font-size: 16px;
   font-weight: bold;
-  color: #ff5555;   
+  color: #ff5555;      /* red for live effect */
   text-shadow: 0 0 5px #ff0000;
   margin-bottom: 0.3rem;
   text-align: center;
@@ -539,7 +511,7 @@ body.dark-mode .dashboard-chart-card {
   border-radius: 8px;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically centers text */
   position: relative;
   border: 1px solid #ff5555;
 }
@@ -547,15 +519,15 @@ body.dark-mode .dashboard-chart-card {
 .space-events-wrapper {
   display: inline-block;
   white-space: nowrap;
-  animation: scroll-events 50s linear infinite; 
-  animation-delay: 0s;
-  vertical-align: middle; 
+  animation: scroll-events 60s linear infinite; /* slower scroll */
+  animation-delay: 0s; /* appear immediately on page load */
+  vertical-align: middle; /* aligns text vertically inside container */
 }
 
 
 .space-events {
   display: flex;
-  gap: 6rem; 
+  gap: 6rem; /* space between each event */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -567,25 +539,24 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
   font-weight: 500;
 }
-
 @keyframes scroll-events {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } 
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .page-wrapper {
   min-height: 100vh;
   position: relative;
-  padding-bottom: 60px; 
+  padding-bottom: 60px; /* space for the footer height */
 }
 
-
+/* Footer stays at bottom */
 .dashboard-footer {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; 
+  height: 100px; /* same as padding-bottom in wrapper */
   color: #bbb;
   font-size: 0.9rem;
   text-align: center;
@@ -625,6 +596,7 @@ body.dark-mode .dashboard-chart-card {
     align-items: center;
   }
 
+  /* Full width for both columns on mobile */
   .dashboard-top-left,
   .dashboard-right,
   .dashboard-chart-card,
@@ -635,19 +607,19 @@ body.dark-mode .dashboard-chart-card {
     height: auto !important;
   }
 
-
+  /* Fix the right-top flex (temp chart + orbit) to stack on very small screens */
   .dashboard-right .right-top {
     display: flex;
     flex-direction: column;
   }
 
-
+  /* Make orbit animation smaller and centered */
   .orbit-animation {
     transform: scale(0.75);
     margin: 0 auto;
   }
 
-
+  /* Three small cards stack full-width */
   .dashboard-totals {
     flex-direction: column;
     align-items: center;
@@ -658,11 +630,12 @@ body.dark-mode .dashboard-chart-card {
     height: auto;
   }
 
-
+  /* Reduce huge top padding on mobile */
   .dashboard-container {
     padding: 6rem 1rem 2rem 1rem;
   }
 
+  /* Live events readable */
   .space-events li {
     font-size: 1rem;
   }
@@ -670,20 +643,23 @@ body.dark-mode .dashboard-chart-card {
 
 @media (max-width: 991.98px) {
   .dashboard-chart-card canvas {
-    height: 380px !important;  
+    height: 380px !important;   /* give it a real height instead of 100% */
     max-height: none !important;
   }
 }
 
+/* FINAL RESPONSIVE CHARTS – perfect on every device */
+/* Mobile & tablet */
 #planetChart,
 #tempChart {
-  height: 380px !important;          
-  object-fit: contain;                
+  height: 380px !important;           /* nice height on phones */
+  object-fit: contain;                /* never stretched, always round bubbles */
 }
 
+/* Desktop only – bring back your original beautiful heights */
 @media (min-width: 992px) {
-  #planetChart  { height: 380px !important; }   
-  #tempChart    { height: 300px !important; }   
+  #planetChart  { height: 380px !important; }   /* or 350px if you prefer */
+  #tempChart    { height: 300px !important; }   /* ← this stops the “cramped to top” */
 }
 @media (max-width: 950px) {
   .dashboard-totals .card {
@@ -694,8 +670,10 @@ body.dark-mode .dashboard-chart-card {
   }
 }
 
+/* GLOSSY GLASSMORPHISM EFFECT FOR ALL CARDS */
+
 .dashboard-totals .card {
-  background: rgba(2, 5, 23, 0.61) !important;       
+  background: rgba(2, 5, 23, 0.61) !important;          /* Deep space blue with transparency */
   backdrop-filter: blur(16px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
   border: 1.5px solid rgba(120, 140, 255, 0.25) !important;
@@ -703,12 +681,13 @@ body.dark-mode .dashboard-chart-card {
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.4),
     0 0 30px rgba(100, 80, 255, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;   
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;   /* Inner top highlight */
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
 }
 
+/* Subtle shine highlight (the "glossy" moving light) */
 .dashboard-totals .card::before {
   content: "";
   position: absolute;
@@ -725,10 +704,12 @@ body.dark-mode .dashboard-chart-card {
   pointer-events: none;
 }
 
+/* Shine moves on hover */
 .totals .card:hover::before {
   left: 100%;
 }
 
+/* Extra glow on hover */
 .totals .card:hover {
   transform: translateY(-6px);
   box-shadow: 
@@ -738,7 +719,7 @@ body.dark-mode .dashboard-chart-card {
 }
 
 .totals .card {
-  color: #e0e8ff !important;              
+  color: #e0e8ff !important;                 /* Light blue-white text */
   text-align: center;
 }
 
@@ -752,7 +733,7 @@ body.dark-mode .dashboard-chart-card {
 
 .dashboard-totals .card .card-text,
 .dashboard-totals .card p.display-4 {
-  font-size: 1.2rem !important;           
+  font-size: 1.2rem !important;             
   font-weight: 900 !important;
   background: linear-gradient(135deg, #7e90ff, #c0d8ff, #7ef3ff);
   -webkit-background-clip: text;
@@ -764,20 +745,15 @@ body.dark-mode .dashboard-chart-card {
   margin: 0 !important;
 }
 
-
 .dashboard-chart-card::before {
-  pointer-events: none !important;  
-  z-index: 0 !important;          
+  pointer-events: none !important;   
+  z-index: 0 !important;             
 }
-
 
 #planetChart {
   position: relative;
   z-index: 1 !important;
   pointer-events: auto !important;
-  width: 100% !important;
-  height: auto !important;
-  max-height: 380px;
 }
 
 .dashboard-chart-card, 
@@ -792,11 +768,9 @@ body.dark-mode .dashboard-orbit-card {
   backdrop-filter: blur(16px) saturate(180%);
 }
 
-
 body.dark-mode .orbit-animation .planet {
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); 
 }
-
 
 body.dark-mode .sun {
   box-shadow: 0 0 20px #FFD700;
@@ -806,41 +780,77 @@ body.dark-mode .orbit {
   border: 1px solid rgba(255,255,255,0.1);
 }
 
+.space-events-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  animation-delay: 2s;
+  vertical-align: middle;
+}
 
-@media (max-width: 991.98px) {
-  .dashboard-orbit-card {
-    min-height: 320px;  
+@keyframes scroll-events {
+  0% {
+    transform: translateX(20%);
   }
 
-  .orbit-animation {
-    height: 260px;     
-    transform: scale(0.8);
-    transform-origin: center;
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.space-events-wrapper {
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  animation: scroll-events 25s linear infinite;
+}
+
+@keyframes scroll-events {
+  from {
+    left: 100%;
+    transform: translateX(0);
+  }
+
+  to {
+    left: 0;
+    transform: translateX(-100%);
   }
 }
 
-@media (max-width: 991.98px) {
-  .sun,
-  .orbit {
-    top: 50%;
-  }
+.dashboard-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  width: 100%;
+  max-width: none;
+}
+#tempChartCard {
+  flex: 1;
+  min-width: 0;
+  height: 400px;
 }
 
-@media (max-width: 991.98px) {
-  .dashboard-container {
-    padding-top: 5.2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+.dashboard-orbit-card {
+  flex: 1.3;
+  min-width: 0;
+  height: 400px;
+}
 
+#tempChartCard {
+  flex: 1;
+  min-width: 0;
+  height: 400px;
+}
 
+.dashboard-orbit-card {
+  flex: 1.3;
+  min-width: 0;
+  height: 400px;
+}
 
-
-
-
-
-
-
-
-
-
+.live-event-container {
+  width: 100%;
+  flex: 0 0 100%;
+  margin-top: 1rem;
+}

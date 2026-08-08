@@ -6,20 +6,16 @@
   <title>AXN | Solar System Explorer</title>
   <link rel="icon" href="images/logo.png">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/dashboard.css">
   <style>
 
-    /* Bubble Chart Neon Glow */
     #planetChart {
       background: rgba(255, 255, 255, 0.03);
       border-radius: 20px;
       padding: 10px;
     }
 
-    /* Smooth Float Animation */
     @keyframes bubbleFloat {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-8px); }
@@ -30,7 +26,6 @@
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="main-navbar">
-  <!-- STARFIELD CANVAS -->
 <canvas id="starfield" class="position-absolute top-0 start-0 w-100 h-100"></canvas>
 
   <div class="container-fluid">
@@ -47,12 +42,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
 
-        <!-- Dashboard -->
         <li class="nav-item">
           <a class="nav-link active" href="dashboard.html">Dashboard</a>
         </li>
 
-        <!-- Explore Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown">
             Explore
@@ -75,7 +68,7 @@
 
         <!-- Logout -->
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Logout</a>
+          <a class="nav-link" href="quote.html">Logout</a>
         </li>
 
         <!-- Dark Mode Toggle -->
@@ -93,18 +86,14 @@
 </nav>
 
  <div class="page-wrapper">
-  <!-- Dashboard Content -->
-<div class="container dashboard-container">
-
+<div class="container-fluid dashboard-container">
 <div class="dashboard-main">
-  <!-- Top row -->
   <div class="dashboard-top-left">
     <div class="card shadow p-4 dashboard-chart-card">
       <h4 class="chart-title">Planet Size Comparison</h4>
       <canvas id="planetChart" class="w-100 h-auto"></canvas>
     </div>
 
-    <!-- Three total cards under the bubble chart -->
     <div class="dashboard-totals d-flex gap-3 mt-3 flex-wrap">
       <div class="card text-center shadow mb-3 flex-fill">
         <div class="card-body">
@@ -127,7 +116,6 @@
     </div>
   </div>
 
-  <!-- Top right: temp chart + solar system orbit -->
 <div class="dashboard-right">
   <div class="right-top">
     <div id="tempChartCard" class="dashboard-chart-card">
@@ -154,18 +142,17 @@
 </div>
 </div>
 
-  <!-- Bottom row: latest space events -->
 <div class="live-event-container">
   <h5 class="live-event-title">LIVE SPACE EVENTS</h5>
   <div class="live-event">
     <div class="space-events-wrapper">
-      <ul class="space-events">
-       <li>🚀 SpaceX successfully launches new satellite into orbit around Earth</li>
-        <li>🌑 Total lunar eclipse visible tonight across several continents</li>
-        <li>☄️ Comet Zeta passes close to Earth, visible with binoculars</li>
-        <li>🛰️ James Webb telescope captures stunning new images of an exoplanet</li>
-        <li>🌌 Milky Way center imaged in infrared, revealing new star formations</li>
-      </ul>
+<ul class="space-events">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
     </div>
   </div>
 </div>
@@ -176,12 +163,9 @@
 </footer>
 
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Chart.js -->
   
 
-  <!-- Bubble Chart Script -->
   <script>
     const ctx = document.getElementById('planetChart').getContext('2d');
 
@@ -240,9 +224,7 @@
     });
   </script>
 
-  <!-- Custom JS -->
   <script src="js/dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
-

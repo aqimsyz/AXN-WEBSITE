@@ -1,7 +1,7 @@
 html, body {
-  height: 100%;     
-  margin: 0;        
-  overflow: hidden;   
+  height: 100%;       /* full viewport height */
+  margin: 0;          /* remove default margin */
+  overflow: hidden;   /* disables scrolling */
 }
 
 @font-face {
@@ -34,16 +34,16 @@ header{
     color: #fff;
 }
 ul li a {
-  text-decoration: none; 
-  color: #fff;            
-  padding: 0.5rem 1rem;  
-  display: inline-block;  
+  text-decoration: none;  /* remove underline */
+  color: #fff;            /* white text */
+  padding: 0.5rem 1rem;   /* optional padding */
+  display: inline-block;  /* behave like a button */
   transition: all 0.3s ease;
 }
 
 ul li a:hover {
-  text-shadow: 0 0 10px #00ffff;
-  color: #00ffff;                
+  text-shadow: 0 0 10px #00ffff; /* glow on hover */
+  color: #00ffff;                 /* optional hover color */
 }
 
 .nav ul{
@@ -122,16 +122,16 @@ ul li a:hover {
     background: transparent;
     text-decoration: none;
     color: #fff;
-    border: 1px solid #8DA4EA;   
+    border: 1px solid #8DA4EA;   /* add a border if you want */
     padding: 10px 25px;
     border-radius: 10px;
-    transition: 0.3s ease;      
+    transition: 0.3s ease;        /* smooth transition for glow */
 }
 
-
+/* Glow effect on hover */
 .content .btn:hover {
     box-shadow: 0 0 10px #8DA4EA, 0 0 20px #8DA4EA, 0 0 30px #8DA4EA;
-    transform: scale(1.05); 
+    transform: scale(1.05); /* optional: slightly enlarge button */
 }
 .earth-img {
     display: flex;
@@ -161,21 +161,23 @@ ul li a:hover {
     height: 147%;
 }
 
+/* --- Tablet (≤768px) --- */
 @media (max-width: 576px) {
     .earth-img::after {
-        right: 50px;   
-        top: -20px;       
-        width: 25%;   
+        right: 50px;      /* move closer to center */
+        top: -20px;       /* adjust vertical position */
+        width: 25%;       /* scale down */
         height: auto;
         background-size: contain;
     }
 }
 
+/* --- Mobile (≤480px) --- */
 @media (max-width: 480px) {
     .earth-img::after {
-        right: 20px;      
-        top: 0;           
-        width: 18%;      
+        right: 20px;      /* move closer to center */
+        top: 0;           /* align vertically with hero bottom */
+        width: 18%;       /* smaller on phones */
         height: auto;
         background-size: contain;
     }
@@ -186,6 +188,7 @@ ul li a:hover {
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
+/* HAMBURGER (hidden on desktop) */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -198,7 +201,7 @@ ul li a:hover {
     background: white;
     display: block;
 }
-
+/* MOBILE SETTINGS */
 @media (max-width: 954px) {
     .nav {
         display: none;  
@@ -241,10 +244,11 @@ ul li a:hover {
     }
 }
 
+/* --- Tablet (≤768px) --- */
 @media (max-width: 735px) {
     .content h1 {
-        font-size: 36px;    
-        line-height: 50px;   
+        font-size: 36px;      /* smaller heading */
+        line-height: 50px;    /* adjust line height */
     }
     
     .content h1 span {
@@ -252,14 +256,15 @@ ul li a:hover {
     }
 
     .content p {
-        font-size: 12px;   
+        font-size: 12px;      /* smaller paragraph */
         line-height: 20px;
     }
 }
 
+/* --- Mobile (≤480px) --- */
 @media (max-width: 480px) {
     .content h1 {
-        font-size: 24px;     
+        font-size: 24px;      /* much smaller heading */
         line-height: 34px;
     }
     
@@ -268,59 +273,29 @@ ul li a:hover {
     }
 
     .content p {
-        font-size: 10px;     
+        font-size: 10px;      /* smaller paragraph for phones */
         line-height: 16px;
     }
 }
 
-@media (max-width: 480px) {
-    .earth-img {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 180px;
-        z-index: 1;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        margin-top: 0;
-        top: auto;
-    }
-
-    .earth-img img {
-        width: 100%;
-        max-width: 480px;
-        height: auto;
-        display: block;
-    }
-
-    .earth-img::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        height: 140px;
-        background-image: url(../images/globe.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: bottom center;
-    }
-
+/* --- Tablet (≤768px) --- */
+@media (max-width: 768px) {
     .earth-img::after {
-        content: '';
-        position: absolute;
-        bottom: 60px;
-        right: 8%;
-        width: 25%;
-        background-image: url(../images/astronout.png);
-        background-repeat: no-repeat;
+        right: 50px;      /* move closer to center */
+        top: -20px;       /* adjust vertical position */
+        width: 25%;       /* scale down */
+        height: auto;
         background-size: contain;
     }
 }
 
-
-
-
+/* --- Mobile (≤480px) --- */
+@media (max-width: 480px) {
+    .earth-img::after {
+        right: 20px;      /* move closer to center */
+        top: 0;           /* align vertically with hero bottom */
+        width: 18%;       /* smaller on phones */
+        height: auto;
+        background-size: contain;
+    }
+}

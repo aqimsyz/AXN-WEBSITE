@@ -1,10 +1,5 @@
-// ================================================
-//        dashboard.js
-// ================================================
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  // ===== STARFIELD ANIMATION =====
   const canvas = document.getElementById("starfield");
   if (canvas) {
     const ctx = canvas.getContext("2d");
@@ -48,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resize);
   }
 
-  // ===== DARK MODE TOGGLE + COMET TRAIL =====
   const toggle = document.getElementById("toggle-dark-navbar");
   const icon = document.querySelector(".toggle-icon");
   const trailContainer = document.querySelector(".trail-container");
@@ -93,28 +87,36 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ===== DYNAMIC SPACE EVENTS =====
-  const eventsList = document.querySelector(".space-events");
-  if (eventsList) {
-    const events = [
-      "🚀 SpaceX launches new satellite",
-      "🌑 Lunar eclipse visible tonight",
-      "☄️ Comet Zeta passing close to Earth",
-      "🛰️ James Webb telescope captures new exoplanet",
-      "🌌 Milky Way center imaged in infrared"
-    ];
-    let eventIndex = 0;
+const eventsList = document.querySelector(".space-events");
+const eventsWrapper = document.querySelector(".space-events-wrapper");
 
-    setInterval(() => {
-      const items = eventsList.querySelectorAll("li");
-      items.forEach((li, idx) => {
-        li.textContent = events[(eventIndex + idx) % events.length];
-      });
-      eventIndex = (eventIndex + 1) % events.length;
-    }, 40000);
+if (eventsList && eventsWrapper) {
+  const events = [
+    "🚀 SpaceX launches new satellite",
+    "🌑 Lunar eclipse visible tonight",
+    "☄️ Comet Zeta passing close to Earth",
+    "🛰️ James Webb telescope captures new exoplanet",
+    "🌌 Milky Way center imaged in infrared"
+  ];
+
+  let eventIndex = 0;
+
+  function updateEvents() {
+    const items = eventsList.querySelectorAll("li");
+
+    items.forEach((li, idx) => {
+      li.textContent = events[(eventIndex + idx) % events.length];
+    });
   }
 
-  // ===== PLANET SIZE BUBBLE CHART =====
+
+  updateEvents();
+
+  setTimeout(() => {
+    eventsWrapper.classList.add("start-scrolling");
+  }, 8000);
+}
+
  const planetChartCanvas = document.getElementById('planetChart');
 if (planetChartCanvas) {
   const ctx = planetChartCanvas.getContext('2d');
@@ -153,13 +155,13 @@ if (planetChartCanvas) {
       plugins: {
         legend: {
           display: true,
-          position: 'bottom',     
+          position: 'bottom',       
           align: 'center',
           labels: {
             color: '#e0e8ff',
             font: { size: 14, weight: '600' },
             padding: 20,
-            usePointStyle: true,   
+            usePointStyle: true,     
             pointStyle: 'circle',
             boxWidth: 12,
             boxHeight: 12,
@@ -194,7 +196,6 @@ if (planetChartCanvas) {
     }
   });
 }
-  // ===== TEMPERATURE BAR CHART =====
   const tempChartCanvas = document.getElementById('tempChart');
   if (tempChartCanvas) {
     const tempCtx = tempChartCanvas.getContext('2d');
@@ -233,6 +234,4 @@ if (planetChartCanvas) {
   }
 
 });
-
-
 

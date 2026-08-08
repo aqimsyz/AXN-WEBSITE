@@ -1,7 +1,10 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.getElementById("login-form");
     const errorMsg = document.getElementById("error-msg");
     const adminBtn = document.getElementById("admin-btn"); 
+
     if (loginForm) {
         loginForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -12,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (username === "user" && password === "1234") {
                 localStorage.setItem("cosmicUsername", username);
                 localStorage.setItem("cosmicLoginTime", Date.now().toString());
-                window.location.href = "dashboard.html";
+                window.location.href = "landing.html";
                 return;
             }
 
@@ -20,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const savedPass = localStorage.getItem("registeredPass");
 
             if (username === savedUser && password === savedPass && savedUser) {
-           
                 localStorage.setItem("cosmicUsername", username);
                 localStorage.setItem("cosmicLoginTime", Date.now().toString());
 
@@ -32,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // ----- CONTINUE AS ADMIN -----
     if (adminBtn) {
         adminBtn.addEventListener("click", () => {
             window.location.href = "dashboard.html";
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const initStars = () => {
             stars = [];
-            const count = canvas.width < 150 ? 10 : 10;
+            const count = canvas.width < 600 ? 90 : 80;
             for (let i = 0; i < count; i++) {
                 stars.push({
                     x: Math.random() * canvas.width,
@@ -89,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const planet = item.dataset.planet;
         const orbit = document.querySelector(`.orbit[data-planet="${planet}"]`);
         const video = orbit?.querySelector(".planet-video");
-      
+        // Inside your script.js — replace the planet hover part with this clean version
         document.querySelectorAll(".planet-item").forEach(item => {
             const orbit = document.querySelector(`.orbit[data-planet="${item.dataset.planet}"]`);
 
@@ -101,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        const info = item.querySelector(".planet-info"); 
+        const info = item.querySelector(".planet-info"); // assuming you have .planet-info
 
         item.addEventListener("mouseenter", () => {
             orbit?.classList.add("highlight");
@@ -117,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
             info?.classList.remove("show");
         });
 
+        // Optional: click to keep highlighted
         item.addEventListener("click", () => {
             document.querySelectorAll(".planet-item").forEach(i => i.classList.remove("active"));
             document.querySelectorAll(".orbit").forEach(o => o.classList.remove("permanent"));
@@ -125,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    
+    // Click outside removes permanent highlight
     document.addEventListener("click", e => {
         if (!e.target.closest(".planet-item") && !e.target.closest(".orbit")) {
             document.querySelectorAll(".planet-item").forEach(i => i.classList.remove("active"));
@@ -226,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(li) li.textContent = event;
     });
 
+    // Hover planet list: highlight orbit
     document.querySelectorAll('.planet-list .planet-item').forEach(item => {
         item.addEventListener('mouseenter', () => {
             const planet = item.dataset.planet;
@@ -238,28 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-}); 
+}); // end DOMContentLoaded
 
 document.getElementById('logoutBtn').addEventListener('click', () => {
- 
+  // Redirect to logout endpoint
   window.location.href = 'index.html';
 });
-
-  // ===== PLANET ORBITS =====
-    document.querySelectorAll('.orbit').forEach(orbit => {
-        const wrapper = orbit.querySelector('.planet-wrapper');
-        const radius = getComputedStyle(orbit).getPropertyValue('--orbit-radius').trim();
-        const radiusPx = radius.includes('px') ? radius : `${radius}px`;
-        const angle = Math.random() * 360;
-        wrapper.style.transform = `rotate(${angle}deg) translateX(${radiusPx}) rotate(${-angle}deg)`;
-    });
-
-
-
-
-
-
-
-
-
-

@@ -8,20 +8,12 @@ body {
     font-family: 'Exo 2', sans-serif;
     background: linear-gradient(to bottom, #000000 0%, #0b0d17 100%);
     color: #ffffff;
-    min-height: 100vh;       
+    min-height: 100vh;     
+    overflow: hidden;    
     display: flex;       
     flex-direction: column;
     background-image: url(../images/img2.jpg);
     background-size: 100% auto;
-    overflow-x: hidden;
-    padding-top: 80px;
-
-}
-
-@media (min-width: 1024px) {
-    html {
-        background-size: 100% auto;
-    }
 }
 
 #starfield {
@@ -29,26 +21,27 @@ body {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;                         
+  z-index: 1;                          /* Behind navbar & content */
   pointer-events: none;
 }
+
 @font-face {
     font-family:"Syncopate-Bold";
     src: url(../font/Syncopate-Bold.ttf);
 }
 .navbar-nav {
-  display: flex !important;                
-  gap: 1rem !important;                   
-  font-family: 'Syncopate-Bold', sans-serif !important; 
+  display: flex !important;                /* ensure flex layout */
+  gap: 1rem !important;                    /* space between items */
+  font-family: 'Syncopate-Bold', sans-serif !important;  /* your custom font */
   font-size: 12px !important; 
 
 }
 .navbar-title {
-  font-family: 'Syncopate-Bold', sans-serif !important; 
-  font-size: 12px !important;                         
-  letter-spacing: 1px; 
-  white-space: normal;
+  font-family: 'Syncopate-Bold', sans-serif !important; /* your font */
+  font-size: 12px !important;                          /* adjust size */
+  letter-spacing: 1px;                                   /* optional spacing between letters */
 }
+
 
 .nav-link.active {
   color: #00d2ff !important;
@@ -72,6 +65,7 @@ body {
   box-shadow: 0 0 10px #00d2ff;
 }
 
+  /* Smooth fade-in */
   .dropdown-menu {
     transition: opacity 0.25s ease, transform 0.25s ease;
     opacity: 0;
@@ -86,14 +80,16 @@ body {
     visibility: visible;
   }
 
+/* Starfield inside dropdown + glassy dark look */
 .dropdown-menu {
-  background: rgba(10, 10, 30, 0.85) !important;   
-  backdrop-filter: blur(10px);                 
+  background: rgba(10, 10, 30, 0.85) !important;   /* Deep space color */
+  backdrop-filter: blur(10px);                     /* Glassmorphism */
   border: 1px solid rgba(100, 150, 255, 0.3);
   border-radius: 12px;
-  overflow: hidden;                           
+  overflow: hidden;                                /* Important for the pseudo-canvas */
 }
 
+/* This creates moving stars inside the dropdown */
 .dropdown-menu::before {
   content: "";
   position: absolute;
@@ -121,6 +117,7 @@ body {
   to   { background-position: 0 100px; }
 }
 
+/* Make dropdown items pop */
 .dropdown-item {
   color: #bbd0ff !important;
   transition: all 0.2s ease;
@@ -132,28 +129,13 @@ body {
   text-shadow: 0 0 10px rgba(100, 200, 255, 0.8);
 }
 #main-navbar {
-  position: fixed;
-  overflow: visible !important;
-}
-
-#main-navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(1px 1px at 80px 60px, #fff, transparent),
-    radial-gradient(2px 2px at 150px 40px, #fff, transparent);
-  background-size: 200px 100px;
-  animation: starfieldMove 25s linear infinite;
-  opacity: 0.5;
-  z-index: 0;
-  pointer-events: none;
+  overflow: visible !important;        /* Crucial */
+  z-index: 1050;                       /* Same as Bootstrap navbar default */
 }
 
 #starfield {
-  z-index: 0;                      
-  pointer-events: none;             
+  z-index: 0;                          /* Behind everything */
+  pointer-events: none;                /* Lets clicks pass through to navbar */
 }
 
 #main-navbar .position-relative,
@@ -161,18 +143,19 @@ body {
 #main-navbar button,
 #main-navbar ul,
 #main-navbar .dropdown-menu {
-  z-index: 10;                     
+  z-index: 10;                         /* Above the canvas */
 }
 
-
+/* Make sure dropdown appears above canvas */
 .dropdown-menu {
-  z-index: 1060 !important;         
+  z-index: 1060 !important;            /* Higher than navbar */
 
 }#toggle-dark-navbar {
   position: absolute;
   opacity: 0;
 }
 
+/* Toggle track */
 .toggle-label {
   position: relative;
   display: inline-block;
@@ -185,6 +168,7 @@ body {
   overflow: hidden;
 }
 
+/* Icon (sun/moon) */
 .toggle-icon {
   position: absolute;
   font-size: 20px;
@@ -196,6 +180,7 @@ body {
   pointer-events: none;
 }
 
+/* Comet Trail */
 .toggle-comet {
   position: absolute;
   top: 50%;
@@ -219,6 +204,7 @@ body {
   pointer-events: none;
 }
 
+/* Trail particle */
 .trail-particle {
   position: absolute;
   width: 6px;
@@ -231,6 +217,7 @@ body {
   animation-fill-mode: forwards;
 }
 
+/* Moon color */
 .trail-particle.moon-mode {
   background: #00eaff;
   filter: drop-shadow(0 0 10px #00eaff);
@@ -241,12 +228,14 @@ body {
   100% { transform: translateX(var(--distance, 28px)) translateY(var(--scatter-y)) scale(0.3); opacity: 0; }
 }
 
+/* DARK MODE — move icon to right (moon) */
 #toggle-dark-navbar:checked + .toggle-label .toggle-icon {
   left: 34px;
   content: "🌙";
   filter: drop-shadow(0 0 6px #00eaff) drop-shadow(0 0 12px #00eaff);
 }
 
+/* Comet trail activates */
 #toggle-dark-navbar:checked + .toggle-label .toggle-comet {
   opacity: 1;
   width: 26px;
@@ -256,36 +245,42 @@ body {
   animation: cometMove 0.35s ease forwards;
 }
 
+/* COMET MOVEMENT */
 @keyframes cometMove {
   0% { transform: translate(-5px, -50%); opacity: 1; }
   100% { transform: translate(25px, -50%); opacity: 0; }
 }
 
+/* Light mode sun glow */
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-icon {
   filter: drop-shadow(0 0 6px #ffdd55) drop-shadow(0 0 12px #ffcc33);
 }
 
+/* Light mode comet (reverse direction) */
 #toggle-dark-navbar:not(:checked) + .toggle-label .toggle-comet {
   background: linear-gradient(to right, rgba(255,200,0,0.8), transparent);
 }
+/* Light mode overlay */
 body.light-mode::before,
 body.dark-mode::before {
   content: "";
-  position: fixed; 
+  position: fixed; /* fixed so it covers viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: -1;
+  z-index: -1; /* behind content but above background */
 }
 
+/* Light mode tint */
 body.light-mode::before {
-  background-color: rgba(255,255,255,0.05); 
+  background-color: rgba(255,255,255,0.05); /* slight light tint */
 }
 
+/* Dark mode overlay */
 body.dark-mode::before {
-  background-color: rgba(0,0,0,0.7); 
+  background-color: rgba(0,0,0,0.7); /* dark overlay */
 }
 body.dark-mode .login-card,
 body.dark-mode .register-card,
@@ -295,16 +290,19 @@ body.dark-mode .dashboard-chart-card {
   color: #fff;
 }
 
+
+/* Fixed top and background */
 #main-navbar {
-  position: relative;          
-  overflow: hidden;             
-  background: rgba(0, 0, 20, 0.8);
+  position: relative;           /* Needed for the canvas to be positioned inside */
+  overflow: hidden;             /* Prevents stars from leaking out */
+  background: rgba(0, 0, 20, 0.8); /* fallback color */
 
 }
   .navbar .dropdown-toggle::after {
-  display: none; 
+  display: none; /* hides the arrow */
 }
 
+/* Make sure navbar text/links stay on top */
 .navbar-brand,
 .navbar-nav .nav-link,
 .form-check-label {
@@ -312,6 +310,7 @@ body.dark-mode .dashboard-chart-card {
   z-index: 1;
 }
 
+/* Navbar link hover effect */
 .navbar-nav .nav-link {
   position: relative;
   transition: color 0.3s ease;
@@ -329,18 +328,19 @@ body.dark-mode .dashboard-chart-card {
   left: 0;
   width: 100%;
   z-index: 999;
-  background: rgb(0, 0, 6) !important;  
+  background: rgb(0, 0, 6) !important;   /* slightly more transparent */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 12px rgba(0,0,0,0.5);
   transition: all 0.3s ease;
 }
 
+/* Navbar brand/logo */
 #main-navbar .navbar-brand img {
   border-radius: 50%;
 }
 
-
+/* Navbar links */
 #main-navbar .nav-link {
   position: relative;
   margin: 0 0.5rem;
@@ -577,16 +577,4 @@ footer {
     backdrop-filter: blur(8px); 
     font-size: 14px;       
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
