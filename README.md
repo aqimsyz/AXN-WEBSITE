@@ -234,7 +234,7 @@ cosmicUsername
 cosmicLoginTime
 ```
 
-## 5. Welcome / Landing Screen
+## 4. Welcome / Landing Screen
 
 **File:** `landing.html`
 
@@ -258,7 +258,7 @@ dashboard.html
 
 ---
 
-## 6. Dashboard
+## 5. Dashboard
 
 **File:** `dashboard.html`  
 **Styles:** `css/dashboard.css`  
@@ -344,7 +344,7 @@ The JavaScript periodically rotates the displayed event text.
 
 ---
 
-## 7. Planet Explorer
+## 6. Planet Explorer
 
 **File:** `planets.html`  
 **Styles:** `css/planets.css`  
@@ -427,7 +427,7 @@ Neptune  30.10 AU
 
 ---
 
-## 8. Fun Facts & Habitability
+## 7. Fun Facts & Habitability
 
 **File:** `fun.html`  
 **Styles:** `css/fun.css`  
@@ -478,7 +478,7 @@ The page contains a visual historical timeline.
 
 ---
 
-## 9. Constellation Explorer
+## 8. Constellation Explorer
 
 **File:** `star.html`  
 **Styles:** `css/star.css`
@@ -539,7 +539,7 @@ The constellation page uses:
 
 ---
 
-## 10. Lantern Message Experience
+## 9. Lantern Message Experience
 
 **File:** `quote.html`  
 **Styles:** `css/quote.css`  
@@ -583,7 +583,7 @@ index.html
 
 ---
 
-## 11. About Page
+## 10. About Page
 
 **File:** `about.html`  
 **Styles:** `css/about.css`  
