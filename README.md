@@ -260,31 +260,7 @@ cosmicUsername
 cosmicLoginTime
 ```
 
-The user is then redirected to the animated loading experience.
-
----
-
-## 4. Animated Loading Experience
-
-**File:** `loading.html`
-
-The loading page creates a cinematic transition between login and the main system.
-
-### Visual Components
-
-- Animated star background
-- Nebula effect
-- Rotating 3D Solar System
-- Animated Sun
-- Mercury orbit
-- Venus orbit
-- Earth orbit
-- Mars orbit
-- Jupiter orbit
-- Black-hole transition
-- Accretion-disk visual
-- Dynamic loading message
-- Personalized welcome screen
+The user is then redirected to the Welcome Screen.
 
 ### Personalized Greeting
 
@@ -294,40 +270,6 @@ The page reads the recent login data from:
 cosmicUsername
 cosmicLoginTime
 ```
-
-A recently authenticated user is welcomed using:
-
-```text
-Hello, [username]
-```
-
-Direct access defaults to:
-
-```text
-Hello, Explorer
-```
-
-### Loading Sequence
-
-The page performs a timed visual sequence:
-
-```text
-Initial state
-    ↓
-ENTERING ORBIT...
-    ↓
-Black-hole transition
-    ↓
-SYNCHRONIZING...
-    ↓
-Welcome screen
-    ↓
-ENTER DASHBOARD
-```
-
-The final button opens the welcome/landing screen.
-
----
 
 ## 5. Welcome / Landing Screen
 
@@ -533,21 +475,6 @@ The Fun Facts page combines astronomy trivia, habitability visualization, and a 
 ### Interactive Fun Fact Generator
 
 Selecting **Reveal Fact** cycles through a set of 12 astronomy facts.
-
-Topics include:
-
-- Saturn's rings;
-- Venus's rotation;
-- Neptune's atmospheric conditions;
-- neutron stars;
-- Olympus Mons;
-- Solar mass loss;
-- the edge of space;
-- stars in the universe;
-- Jupiter's Great Red Spot;
-- astronaut height changes;
-- descriptions of the smell of space; and
-- Pluto's Tombaugh Regio.
 
 The interface includes a fact counter:
 
@@ -1306,114 +1233,6 @@ XAMPP database
 Laragon database
 ```
 
-A static local web server is enough.
-
----
-
-## Option 1 — VS Code Live Server
-
-This is the easiest option.
-
-### Step 1
-
-Open the project folder in VS Code:
-
-```text
-IMS566-SOLARSYSTEM
-```
-
-### Step 2
-
-Install the VS Code extension:
-
-```text
-Live Server
-```
-
-### Step 3
-
-Right-click:
-
-```text
-index.html
-```
-
-and choose:
-
-```text
-Open with Live Server
-```
-
-A browser URL will usually look similar to:
-
-```text
-http://127.0.0.1:5500/index.html
-```
-
-or:
-
-```text
-http://localhost:5500/index.html
-```
-
----
-
-## Option 2 — Run on Port 8080
-
-The repository contains:
-
-```text
-.vscode/launch.json
-```
-
-configured to open:
-
-```text
-http://localhost:8080
-```
-
-Therefore, if you want to use that exact address, first start a static server on port `8080`.
-
-### Using Python
-
-Open the VS Code terminal inside the project folder and run:
-
-```bash
-python -m http.server 8080
-```
-
-If Windows uses `py` instead:
-
-```bash
-py -m http.server 8080
-```
-
-Then open:
-
-```text
-http://localhost:8080
-```
-
-or:
-
-```text
-http://localhost:8080/index.html
-```
-
-After the server is running, the VS Code Chrome launch configuration can also open that address.
-
----
-
-## Why `localhost` Must Have a Server
-
-The included VS Code configuration tells Chrome:
-
-```text
-Open http://localhost:8080
-```
-
-It does not itself contain a web server.
-
 The correct flow is:
 
 ```text
@@ -1476,9 +1295,6 @@ and then use that username and password on the login page.
 ---
 
 # Information Systems Management Skills Demonstrated
-
-This project is suitable for an **Information Systems Management student portfolio** because it demonstrates the connection between information presentation, interaction design, user flow, and front-end technology.
-
 ## Information Architecture
 
 - structured navigation;
@@ -1561,8 +1377,6 @@ This project is suitable for an **Information Systems Management student portfol
 ---
 
 # Project Credits
-
-The website source identifies the project creators as:
 
 ### Syazwan Aqim  
 ### Ahmad Naqiu Dinie
