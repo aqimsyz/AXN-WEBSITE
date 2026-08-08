@@ -1240,20 +1240,19 @@ and then use that username and password on the login page.
 1. Open `index.html`.
 2. Select **Register** to create a browser-based account, or select **Discover Now**.
 3. Log in using your credentials.
-4. Watch the animated Solar System loading sequence.
-5. Continue through the welcome screen.
-6. Open the Dashboard.
-7. Review planet-size and temperature visualizations.
-8. Use **Explore → Planets** to open the interactive planet model.
-9. Hover over planet names to view details.
-10. Use **Explore → Fun Facts** to reveal astronomy facts.
-11. Review the habitability comparison.
-12. Explore the Solar System historical timeline.
-13. Open **Constellation** to study 12 star patterns.
-14. Open **About** to review the mission, vision, and objectives.
-15. Open **Logout** to enter the lantern-message page.
-16. Write and release a lantern message if desired.
-17. Select **Logout** to return to the main introduction page.
+4. Continue through the welcome screen.
+5. Open the Dashboard.
+6. Review planet-size and temperature visualizations.
+7. Use **Explore → Planets** to open the interactive planet model.
+8. Hover over planet names to view details.
+9. Use **Explore → Fun Facts** to reveal astronomy facts.
+10. Review the habitability comparison.
+11. Explore the Solar System historical timeline.
+12. Open **Constellation** to study 12 star patterns.
+13. Open **About** to review the mission, vision, and objectives.
+14. Open **Logout** to enter the lantern-message page.
+15. Write and release a lantern message if desired.
+16. Select **Logout** to return to the main introduction page.
 
 ---
 
